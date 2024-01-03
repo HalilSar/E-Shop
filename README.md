@@ -7,6 +7,7 @@ obj/
 .vs/
 *.user
 *.sln.docstates
+src/.vs/
 
 _ReSharper*/
 *.resharper
