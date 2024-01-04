@@ -11,6 +11,7 @@ namespace Eshop.Core.Domain.Entities
         public string Password { get; set; }
         public List<CartItem> CartItems { get; set; }
         public List<Order> Orders { get; set; }
+        public List<OrderProduct> OrderProducts { get; set; }
 
     }
 }
