@@ -1,8 +1,4 @@
 ﻿using Eshop.Core.Domain.Abstracts;
-using System;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 namespace Eshop.Core.Domain.Entities
 {
     public class CartItem : BaseEntity 
