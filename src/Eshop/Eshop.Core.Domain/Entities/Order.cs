@@ -16,5 +16,6 @@ namespace Eshop.Core.Domain.Entities
         public string PhoneNumber { get; set; }
         public string Adress { get; set; }
         public double Total { get; set; }
+        public List<OrderProduct> OrderProducts { get; set; }
     }
 }
