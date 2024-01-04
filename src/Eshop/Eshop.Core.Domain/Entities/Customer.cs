@@ -1,4 +1,5 @@
 ﻿using Eshop.Core.Domain.Abstracts;
+using System.Collections.Generic;
 
 namespace Eshop.Core.Domain.Entities
 {
@@ -8,5 +9,6 @@ namespace Eshop.Core.Domain.Entities
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public List<CartItem> CartItems { get; set; }
     }
 }
