@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Interfaces.Context
 {
-    interface IApplication
+    public interface IApplication
     {
     }
 }
