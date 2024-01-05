@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Interfaces.Context
 {
-    public interface IApplication
+    public interface IApplicationDbContext
     {
         public DbSet<Customer>       Customers     { get; set; }
         public DbSet<Category>       Categories    { get; set; }
