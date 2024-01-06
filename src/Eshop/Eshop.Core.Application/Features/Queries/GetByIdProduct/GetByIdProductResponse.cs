@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetByIdProduct
 {
-    public  class GetByIdResponse
+    public  class GetByIdProductResponse
     {
         public int Id { get; set; }
         public string Title { get; set; }
