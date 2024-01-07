@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetOrderProduct
 {
-   public class GetOrderProductResquest:IRequest<GetOrderProductResponse>
+   public class GetOrderProductResquest:IRequest<List<GetOrderProductResponse>>
     {
 
 
