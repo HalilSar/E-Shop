@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Interfaces.Repositories
 {
-  public  interface IOrderProductRepository:IRepository<Order>
+  public  interface IOrderProductRepository:IRepository<OrderProduct>
     {
+        List<OrderProduct> GetByOrderId(int id);
     }
 }
