@@ -8,6 +8,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByIdCustomer
 {
     public class GetByIdCustomerResponse 
     {
+        public int Id { get; set; }
         public string Firstname { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
