@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetCartItem
+namespace Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem
 {
-    public  class GetCartItemResponse
+    public  class GetByCustormerIdCartItemResponse
     {
         public int CustomerId { get; set; }
         public int ProductId { get; set; }

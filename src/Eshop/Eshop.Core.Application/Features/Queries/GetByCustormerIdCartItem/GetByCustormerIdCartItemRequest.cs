@@ -9,5 +9,6 @@ namespace Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem
 {
     public  class GetByCustormerIdCartItemRequest : IRequest<List<GetByCustormerIdCartItemResponse>>
     {
+        public int Id { get; set; }
     }
 }
