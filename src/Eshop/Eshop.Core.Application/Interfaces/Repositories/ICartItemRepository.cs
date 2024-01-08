@@ -8,5 +8,6 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 {
     public interface ICartItemRepository : IRepository<CartItem>
     {
+        List<CartItem> GetByCustormerId(int id);
     }
 }
