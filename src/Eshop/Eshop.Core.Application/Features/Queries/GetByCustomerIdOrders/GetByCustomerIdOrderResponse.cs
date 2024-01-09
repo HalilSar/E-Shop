@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetByIdOrder
+namespace Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders
 {
-   public class GetByIdOrderResponse
+   public class GetByCustomerIdOrdersResponse
     {
         public int Id { get; set; }
         public string Name { get; set; }
