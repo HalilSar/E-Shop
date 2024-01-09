@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetByIdProduct
+namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProductHandler
 {
-    public class GetByIdProductHandler : IRequestHandler<GetByIdProductRequest, GetByIdProductResponse>
+    public class GetByCategoryIdProductHandler : IRequestHandler<GetByIdProductRequest, GetByIdProductResponse>
     {
         IProductRepository _productRepository;
         IMapper _mapper;
-        public GetByIdProductHandler(IProductRepository productRepository, IMapper mapper)
+        public GetByCategoryIdProductHandler(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
             _mapper = mapper;
