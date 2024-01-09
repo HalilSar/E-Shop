@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetByOrderIdOrderProduct
 {
-    public  class GetByOrderIdOrderProductRequest : IRequest<GetByIdOrderProductResponse>
+    public  class GetByOrderIdOrderProductRequest : IRequest<List<GetByOrderIdOrderProductResponse>>
     {
-        public int Id { get; set; }
+        public int OrderId { get; set; }
     }
 }
