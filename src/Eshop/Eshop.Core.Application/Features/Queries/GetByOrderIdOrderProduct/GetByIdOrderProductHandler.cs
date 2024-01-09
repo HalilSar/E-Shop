@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetByIdOrderProduct
+namespace Eshop.Core.Application.Features.Queries.GetByOrderIdOrderProduct
 {
     public  class GetByIdOrderProductHandler : IRequestHandler<GetByIdOrderProductRequest,GetByIdOrderProductResponse>
     {
