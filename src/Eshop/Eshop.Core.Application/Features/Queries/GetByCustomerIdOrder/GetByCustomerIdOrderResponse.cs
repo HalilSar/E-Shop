@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetOrder
+namespace Eshop.Core.Application.Features.Queries.GetByCustomerIdOrderRequest
 {
     public class GetByCustomerIdOrderResponse
     {
