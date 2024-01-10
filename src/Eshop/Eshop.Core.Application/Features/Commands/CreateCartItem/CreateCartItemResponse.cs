@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Commands.CreateCartItem
 {
-    class CreateCartItemRequest
+    public class CreateCartItemResponse
     {
+        public string Success { get; set; }
     }
 }
