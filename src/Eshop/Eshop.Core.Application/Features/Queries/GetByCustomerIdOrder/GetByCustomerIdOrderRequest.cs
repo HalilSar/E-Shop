@@ -5,9 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetOrder
+namespace Eshop.Core.Application.Features.Queries.GetByCustomerIdOrder
 {
-    public class GetByCustomerIdOrderRequest : IRequest<List<GetByCustomerIdOrderResponse>>
+    public class GetByCustomerIdOrderRequest : IRequest<GetByCustomerIdOrderResponse>
     {
+        public int Id { get;set;}
+        public int CategoryId { get; set; }
     }
 }
