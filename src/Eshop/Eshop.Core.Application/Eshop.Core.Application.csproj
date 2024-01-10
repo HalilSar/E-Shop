@@ -15,7 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <Folder Include="Features\Commands" />
 	  
     <Folder Include="Mapping\" />
   </ItemGroup>
