@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Commands.CreateCartItem
+namespace Eshop.Core.Application.Features.Commands.UpdateCartItem
 {
-     public class CreateCartItemRequest:IRequest<CreateCartItemResponse>
+     public class UpdateCartItemRequest : IRequest<UpdateCartItemResponse>
     {
         public int CustomerId { get; set; }
         public int ProductId { get; set; }
