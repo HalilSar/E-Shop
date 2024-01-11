@@ -9,6 +9,7 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 
         Task Add(T entity);
         Task Delete(T entity);
+        Task Update(T entity);
         Task<List<T>> Get();
         Task<T> GetById(int id);
     }
