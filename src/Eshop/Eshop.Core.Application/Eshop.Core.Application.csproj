@@ -14,9 +14,4 @@
     <ProjectReference Include="..\Eshop.Core.Domain\Eshop.Core.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-	  
-    <Folder Include="Mapping\" />
-  </ItemGroup>
-
 </Project>
