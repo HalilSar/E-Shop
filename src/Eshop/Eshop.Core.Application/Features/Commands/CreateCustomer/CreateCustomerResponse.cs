@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Commands.CreateCartItem
+namespace Eshop.Core.Application.Features.Commands.CreateCustomer
 {
     public class CreateCustomerResponse
     {

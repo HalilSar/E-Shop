@@ -5,15 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Commands.CreateCartItem
+namespace Eshop.Core.Application.Features.Commands.CreateCustomer
 {
-     public class CreateCartItemRequest:IRequest<CreateCartItemResponse>
+     public class CreateCustomerRequest : IRequest<CreateCustomerResponse>
     {
-        public int CustomerId { get; set; }
-        public int ProductId { get; set; }
-        public int Amount { get; set; }
-        public double SubTotal { get; set; }
+        public string Firstname { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
         public DateTime CreatedDate { get; set; }
-        public DateTime UpdatedDate { get; set; }
     }
 }
