@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetProduct
 {
-    public class GetProductHandler : IRequestHandler<GetProductRequest, List<GetProductResponse>>
+    public class GetProductHandler : IRequestHandler<GetProductRequest, List<GetByIdProduct>>
     {
 
         IProductRepository _productRepository;
@@ -21,10 +21,10 @@ namespace Eshop.Core.Application.Features.Queries.GetProduct
             _mapper = mapper;
 
         }
-        public async Task<List<GetProductResponse>> Handle(GetProductRequest request, CancellationToken cancellationToken)
+        public async Task<List<GetByIdProduct>> Handle(GetProductRequest request, CancellationToken cancellationToken)
         {
             var products =  _productRepository.Get();
-            return  _mapper.Map<List<GetProductResponse>>(products);
+            return  _mapper.Map<List<GetByIdProduct>>(products);
            
         }
     }

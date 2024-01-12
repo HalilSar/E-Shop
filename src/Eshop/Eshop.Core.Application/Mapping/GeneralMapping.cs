@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
+using Eshop.Core.Application.Features.Queries.GetProduct;
+using Eshop.Core.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +14,12 @@ namespace Eshop.Core.Application.Mapping
     {
         public GeneralMapping()
         {
-           
+            CreateMap<GetByCategoryIdProductResponse,Product>().ReverseMap();
+            CreateMap<GetByIdProduct,Product>().ReverseMap();
+            CreateMap<GetByIdProduct,Product>().ReverseMap();
+
+
+
         }
     }
 }
