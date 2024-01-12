@@ -15,8 +15,9 @@ namespace Eshop.Core.Application.Mapping
         public GeneralMapping()
         {
             CreateMap<GetByCategoryIdProductResponse,Product>().ReverseMap();
-            CreateMap<GetProductResponse,Product>().ReverseMap();
-    
+            CreateMap<GetByIdProduct,Product>().ReverseMap();
+            CreateMap<GetByIdProduct,Product>().ReverseMap();
+
 
 
         }
