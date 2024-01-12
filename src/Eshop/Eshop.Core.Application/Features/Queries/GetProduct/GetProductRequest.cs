@@ -7,7 +7,7 @@ using MediatR;
 
 namespace Eshop.Core.Application.Features.Queries.GetProduct
 {
-    public class GetProductRequest : IRequest<List<GetByIdProduct>>
+    public class GetProductRequest : IRequest<List<GetProductResponse>>
     {
     }
 }
