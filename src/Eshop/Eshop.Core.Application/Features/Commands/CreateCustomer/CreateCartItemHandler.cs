@@ -9,23 +9,23 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Commands.CreateCartItem
+namespace Eshop.Core.Application.Features.Commands.CreateCustomer
 {
-    public class CreateCartItemHandler:IRequestHandler<CreateCartItemRequest,CreateCartItemResponse>
+    public class CreateCustomerHandler : IRequestHandler<CreateCustomerRequest, CreateCustomerResponse>
     {
-        ICartItemRepository _cartItemRepository;
+        ICustomerRepository _customerRepository;
         IMapper _mapper;
-        public CreateCartItemHandler(ICartItemRepository cartItemRepository, IMapper mapper)
+        public CreateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper)
         {
-            _cartItemRepository = cartItemRepository;
+            _customerRepository = customerRepository;
             _mapper = mapper;
     }
 
-        public async Task<CreateCartItemResponse> Handle(CreateCartItemRequest request, CancellationToken cancellationToken)
+        public async Task<CreateCustomerResponse> Handle(CreateCustomerRequest request, CancellationToken cancellationToken)
         {
-           var cartItem= _mapper.Map<CartItem>(request);
-           await _cartItemRepository.Add(cartItem);
-            return new CreateCartItemResponse{ Success = "Başarılı" };
+           var customer = _mapper.Map<Customer>(request);
+           await _customerRepository.Add(customer);
+            return new CreateCustomerResponse { Success = "Başarılı" };
         }
     }
 }
