@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Eshop.Core.Application.Features.Commands.CreateCustomer;
+using Eshop.Core.Application.Features.Commands.UpdateCustomer;
 using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
 using Eshop.Core.Application.Features.Queries.GetByIdCustomer;
 using Eshop.Core.Application.Features.Queries.GetByIdProduct;
@@ -23,6 +24,7 @@ namespace Eshop.Core.Application.Mapping
 
             CreateMap<GetByIdCustomerResponse, Customer>().ReverseMap();
             CreateMap<Customer, CreateCustomerRequest>().ReverseMap();
+            CreateMap<Customer, UpdateCustomerRequest>().ReverseMap();
 
 
         }
