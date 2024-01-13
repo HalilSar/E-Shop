@@ -21,6 +21,7 @@ using Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem;
 using Eshop.Core.Application.Features.Commands.CreateCartItem;
 using Eshop.Core.Application.Features.Commands.UpdateCartItem;
 using Eshop.Core.Application.Features.Commands.DeleteCartItem;
+using Eshop.Core.Application.Features.Queries.GetCategory;
 
 namespace Eshop.Core.Application.Mapping
 {
@@ -49,6 +50,7 @@ namespace Eshop.Core.Application.Mapping
             CreateMap<CartItem, UpdateCartItemRequest>().ReverseMap();
             CreateMap<CartItem, DeleteCartItemRequest>().ReverseMap();
 
+            CreateMap<GetCategoryResponse, Category>().ReverseMap();
 
 
         }
