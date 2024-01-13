@@ -5,6 +5,8 @@ using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
 using Eshop.Core.Application.Features.Queries.GetByIdCustomer;
 using Eshop.Core.Application.Features.Queries.GetByIdProduct;
 using Eshop.Core.Application.Features.Queries.GetProduct;
+using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrder;
+
 using Eshop.Core.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -25,6 +27,8 @@ namespace Eshop.Core.Application.Mapping
             CreateMap<GetByIdCustomerResponse, Customer>().ReverseMap();
             CreateMap<Customer, CreateCustomerRequest>().ReverseMap();
             CreateMap<Customer, UpdateCustomerRequest>().ReverseMap();
+
+            CreateMap<GetByCustomerIdOrderResponse, Order>();
 
 
         }
