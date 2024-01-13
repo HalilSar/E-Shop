@@ -9,23 +9,23 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Commands.CreateCustomer
+namespace Eshop.Core.Application.Features.Commands.UpdateCustomer
 {
-    public class CreateCustomerHandler : IRequestHandler<CreateCustomerRequest, CreateCustomerResponse>
+    public class UpdateCustomerHandler : IRequestHandler<UpdateCustomerRequest, UpdateCustomerResponse>
     {
         ICustomerRepository _customerRepository;
         IMapper _mapper;
-        public CreateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper)
+        public UpdateCustomerHandler(ICustomerRepository customerRepository, IMapper mapper)
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
     }
 
-        public async Task<CreateCustomerResponse> Handle(CreateCustomerRequest request, CancellationToken cancellationToken)
+        public async Task<UpdateCustomerResponse> Handle(UpdateCustomerRequest request, CancellationToken cancellationToken)
         {
            var customer = _mapper.Map<Customer>(request);
-           await _customerRepository.Add(customer);
-            return new CreateCustomerResponse { Success = "Başarılı" };
+           await _customerRepository.Update(customer);
+            return new UpdateCustomerResponse { Success = "Başarılı" };
         }
     }
 }
