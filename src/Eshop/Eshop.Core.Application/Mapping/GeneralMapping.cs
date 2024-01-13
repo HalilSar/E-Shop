@@ -50,7 +50,6 @@ namespace Eshop.Core.Application.Mapping
             CreateMap<CartItem, DeleteCartItemRequest>().ReverseMap();
 
 
-
         }
     }
 }
