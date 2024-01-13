@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders;
 
 namespace Eshop.Core.Application.Mapping
 {
@@ -29,6 +30,7 @@ namespace Eshop.Core.Application.Mapping
             CreateMap<Customer, UpdateCustomerRequest>().ReverseMap();
 
             CreateMap<GetByCustomerIdOrderResponse, Order>();
+            CreateMap<GetByCustomerIdOrdersResponse, Order>();
 
 
         }
