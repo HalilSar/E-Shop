@@ -8,6 +8,6 @@ namespace Eshop.Core.Application
 {
     static public class ServiceRegistration
     {
-
+        
     }
 }
