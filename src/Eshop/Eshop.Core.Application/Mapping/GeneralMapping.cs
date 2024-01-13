@@ -15,6 +15,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders;
 using Eshop.Core.Application.Features.Commands.CreateOrder;
+using Eshop.Core.Application.Features.Commands.CreateOrderProduct;
+using Eshop.Core.Application.Features.Queries.GetByOrderIdOrderProduct;
+using Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem;
+using Eshop.Core.Application.Features.Commands.CreateCartItem;
+using Eshop.Core.Application.Features.Commands.UpdateCartItem;
+using Eshop.Core.Application.Features.Commands.DeleteCartItem;
 
 namespace Eshop.Core.Application.Mapping
 {
@@ -22,6 +28,7 @@ namespace Eshop.Core.Application.Mapping
     {
         public GeneralMapping()
         {
+
             CreateMap<GetByCategoryIdProductResponse,Product>().ReverseMap();
             CreateMap<GetByIdProductResponse,Product>().ReverseMap();
             CreateMap<GetProductResponse, Product>().ReverseMap();
@@ -33,6 +40,15 @@ namespace Eshop.Core.Application.Mapping
             CreateMap<GetByCustomerIdOrderResponse, Order>().ReverseMap();
             CreateMap<GetByCustomerIdOrdersResponse, Order>().ReverseMap();
             CreateMap< Order, CreateOrderRequest>().ReverseMap();
+
+            CreateMap<OrderProduct, CreateOrderProductRequest>().ReverseMap();
+            CreateMap<GetByOrderIdOrderProductResponse, OrderProduct>().ReverseMap();
+
+            CreateMap<GetByCustormerIdCartItemResponse, CartItem>().ReverseMap();
+            CreateMap<CartItem, CreateCartItemRequest>().ReverseMap();
+            CreateMap<CartItem, UpdateCartItemRequest>().ReverseMap();
+            CreateMap<CartItem, DeleteCartItemRequest>().ReverseMap();
+
 
 
         }
