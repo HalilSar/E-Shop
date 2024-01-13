@@ -18,6 +18,7 @@ using Eshop.Core.Application.Features.Commands.CreateOrder;
 using Eshop.Core.Application.Features.Commands.CreateOrderProduct;
 using Eshop.Core.Application.Features.Queries.GetByOrderIdOrderProduct;
 using Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem;
+using Eshop.Core.Application.Features.Commands.CreateCartItem;
 
 namespace Eshop.Core.Application.Mapping
 {
@@ -42,6 +43,8 @@ namespace Eshop.Core.Application.Mapping
             CreateMap<GetByOrderIdOrderProductResponse, OrderProduct>().ReverseMap();
 
             CreateMap<GetByCustormerIdCartItemResponse, CartItem>().ReverseMap();
+            CreateMap<CartItem, CreateCartItemRequest>().ReverseMap();
+   
 
 
         }
