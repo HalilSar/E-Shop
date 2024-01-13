@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders;
+using Eshop.Core.Application.Features.Commands.CreateOrder;
 
 namespace Eshop.Core.Application.Mapping
 {
@@ -29,8 +30,9 @@ namespace Eshop.Core.Application.Mapping
             CreateMap<Customer, CreateCustomerRequest>().ReverseMap();
             CreateMap<Customer, UpdateCustomerRequest>().ReverseMap();
 
-            CreateMap<GetByCustomerIdOrderResponse, Order>();
-            CreateMap<GetByCustomerIdOrdersResponse, Order>();
+            CreateMap<GetByCustomerIdOrderResponse, Order>().ReverseMap();
+            CreateMap<GetByCustomerIdOrdersResponse, Order>().ReverseMap();
+            CreateMap< Order, CreateOrderRequest>().ReverseMap();
 
 
         }
