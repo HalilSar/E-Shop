@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Commands.CreateCustomer
+namespace Eshop.Core.Application.Features.Commands.UpdateCustomer
 {
-     public class CreateCustomerRequest : IRequest<CreateCustomerResponse>
+     public class UpdateCustomerRequest : IRequest<UpdateCustomerResponse>
     {
         public string Firstname { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public DateTime UpdatedDate { get; set; }
     }
 }
