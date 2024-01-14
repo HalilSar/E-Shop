@@ -2,7 +2,7 @@
 
 namespace Eshop.Infrastructure.Persistence
 {
-    public class Class1
+    static public class ServiceRegistiration
     {
     }
 }
