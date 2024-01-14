@@ -11,6 +11,15 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
 {
     public  class ApplicationDbContext:DbContext,IApplicationDbContext
     {
+       // IConfiguration configuration;
+        //public ApplicationDbContext()
+        //{
+
+        //}
+        //public  void OnConfiguring(DbContextOptions<ApplicationDbContext> options)
+        //{
+        //    options.D
+        //}
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }

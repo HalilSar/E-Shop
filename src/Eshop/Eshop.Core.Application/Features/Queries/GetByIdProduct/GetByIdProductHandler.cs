@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProductHandler
+namespace Eshop.Core.Application.Features.Queries.GetByIdProduct
 {
-    public class GetByCategoryIdProductHandler : IRequestHandler<GetByIdProductRequest, GetByIdProductResponse>
+    public class GetByIdProductHandler : IRequestHandler<GetByIdProductRequest, GetByIdProductResponse>
     {
         IProductRepository _productRepository;
         IMapper _mapper;
-        public GetByCategoryIdProductHandler(IProductRepository productRepository, IMapper mapper)
+        public GetByIdProductHandler(IProductRepository productRepository, IMapper mapper)
         {
             _productRepository = productRepository;
             _mapper = mapper;
@@ -22,8 +22,8 @@ namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProductHandler
         public async Task<GetByIdProductResponse> Handle(GetByIdProductRequest request, CancellationToken cancellationToken)
         {
             var product = _productRepository.GetById(request.Id);
-           return  _mapper.Map<GetByIdProductResponse>(product);
-           
+            return _mapper.Map<GetByIdProductResponse>(product);
+
         }
     }
 }
