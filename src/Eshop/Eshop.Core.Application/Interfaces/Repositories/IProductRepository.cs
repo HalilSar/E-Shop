@@ -9,6 +9,6 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 {
     public  interface IProductRepository:IRepository<Product>
     {
-        List<Product> GetByCatId(int id);
+        Task<List<Product>> GetByCatId(int id);
     }
 }
