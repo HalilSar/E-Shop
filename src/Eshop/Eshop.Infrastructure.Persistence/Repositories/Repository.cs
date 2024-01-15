@@ -1,6 +1,7 @@
 ﻿using Eshop.Core.Application.Interfaces.Context;
 using Eshop.Core.Application.Interfaces.Repositories;
 using Eshop.Core.Domain.Abstracts;
+using Eshop.Infrastructure.Persistence.DbContexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,14 +12,15 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity, new()
     {
-        private readonly IApplicationDbContext _applicationDbContext; 
-        public Repository(IApplicationDbContext applicationDbContext)
+        private readonly ApplicationDbContext _applicationDbContext; 
+        public Repository(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;
         }
-        public Task Add(T entity)
+        public async Task Add(T entity)
         {
-            throw new NotImplementedException();
+           await  _applicationDbContext.AddAsync<T>(entity);
+            await _applicationDbContext.SaveChangesAsync();
         }
 
         public Task Delete(T entity)
