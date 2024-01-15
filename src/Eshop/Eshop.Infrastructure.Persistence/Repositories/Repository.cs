@@ -1,4 +1,5 @@
-﻿using Eshop.Core.Application.Interfaces.Repositories;
+﻿using Eshop.Core.Application.Interfaces.Context;
+using Eshop.Core.Application.Interfaces.Repositories;
 using Eshop.Core.Domain.Abstracts;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,11 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity, new()
     {
+        private readonly IApplicationDbContext _applicationDbContext; 
+        public Repository(IApplicationDbContext applicationDbContext)
+        {
+            _applicationDbContext = applicationDbContext;
+        }
         public Task Add(T entity)
         {
             throw new NotImplementedException();
