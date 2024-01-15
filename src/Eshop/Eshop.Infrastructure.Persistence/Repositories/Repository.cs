@@ -25,7 +25,7 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 
         public async Task Delete(T entity)
         {
-             _applicationDbContext.Entry<T>(entity);
+             _applicationDbContext.Remove<T>(entity);
             await _applicationDbContext.SaveChangesAsync();
         }
 
