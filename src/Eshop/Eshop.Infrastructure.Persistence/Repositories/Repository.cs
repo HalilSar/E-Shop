@@ -2,6 +2,7 @@
 using Eshop.Core.Application.Interfaces.Repositories;
 using Eshop.Core.Domain.Abstracts;
 using Eshop.Infrastructure.Persistence.DbContexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,9 +30,9 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             await _applicationDbContext.SaveChangesAsync();
         }
 
-        public Task<List<T>> Get()
+        public async Task<List<T>> Get()
         {
-            throw new NotImplementedException();
+           return await _applicationDbContext.Set<T>().ToListAsync();
         }
 
         public Task<T> GetById(int id)
