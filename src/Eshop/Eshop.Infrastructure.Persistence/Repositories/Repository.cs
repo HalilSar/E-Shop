@@ -23,9 +23,10 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             await _applicationDbContext.SaveChangesAsync();
         }
 
-        public Task Delete(T entity)
+        public async Task Delete(T entity)
         {
-            throw new NotImplementedException();
+             _applicationDbContext.Entry<T>(entity);
+            await _applicationDbContext.SaveChangesAsync();
         }
 
         public Task<List<T>> Get()
@@ -38,9 +39,10 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             throw new NotImplementedException();
         }
 
-        public Task Update(T entity)
+        public async Task Update(T entity)
         {
-            throw new NotImplementedException();
+            _applicationDbContext.Entry<T>(entity);
+            await _applicationDbContext.SaveChangesAsync();
         }
     }
 }
