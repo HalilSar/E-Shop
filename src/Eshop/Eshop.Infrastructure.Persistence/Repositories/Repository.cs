@@ -35,9 +35,9 @@ namespace Eshop.Infrastructure.Persistence.Repositories
            return await _applicationDbContext.Set<T>().ToListAsync();
         }
 
-        public Task<T> GetById(int id)
+        public async Task<T> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await _applicationDbContext.FindAsync<T>(id);
         }
 
         public async Task Update(T entity)
