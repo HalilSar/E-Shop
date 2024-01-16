@@ -22,7 +22,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders
 
         public async Task<List<GetByCustomerIdOrdersResponse>> Handle(GetByCustomerIdOrdersRequest request, CancellationToken cancellationToken)
         {
-           var order = _orderRepository.GetByCustomerId(request.CategoryId);
+           var order =await _orderRepository.GetByCustomerId(request.CategoryId);
            return _mapper.Map<List<GetByCustomerIdOrdersResponse>>(order);
         }
     }
