@@ -22,7 +22,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem
 
         public async Task<List<GetByCustormerIdCartItemResponse>> Handle(GetByCustormerIdCartItemRequest request, CancellationToken cancellationToken)
         {
-            var cartItems = _cartItemRepository.GetByCustormerId(request.Id);
+            var cartItems = await _cartItemRepository.GetByCustormerId(request.Id);
             return _mapper.Map<List<GetByCustormerIdCartItemResponse>>(cartItems);
         }
     }
