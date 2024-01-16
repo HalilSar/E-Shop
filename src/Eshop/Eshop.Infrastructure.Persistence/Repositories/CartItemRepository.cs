@@ -1,6 +1,7 @@
 ﻿using Eshop.Core.Application.Interfaces.Repositories;
 using Eshop.Core.Domain.Entities;
 using Eshop.Infrastructure.Persistence.DbContexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             _applicationDbContext = applicationDbContext;
         }
 
-        public List<CartItem> GetByCustormerId(int id)
+        public async Task<List<CartItem>> GetByCustormerId(int id)
         {
-            return _applicationDbContext.Set<CartItem>().Where(x => x.CustomerId == id).ToList();
+            return await _applicationDbContext.Set<CartItem>().Where(x => x.CustomerId == id).ToListAsync();
         }
     }
 }
