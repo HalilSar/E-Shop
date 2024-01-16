@@ -21,7 +21,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByOrderIdOrderProduct
         }
         public async Task<List<GetByOrderIdOrderProductResponse>> Handle(GetByOrderIdOrderProductRequest request, CancellationToken cancellationToken)
         {
-            var orderProduct = _orderProductRepository.GetByOrderId(request.OrderId);
+            var orderProduct = await _orderProductRepository.GetByOrderId(request.OrderId);
             return _mapper.Map<List<GetByOrderIdOrderProductResponse>>(orderProduct);
         }
     }
