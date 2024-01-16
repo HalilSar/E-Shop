@@ -10,5 +10,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByOrderIdOrderProduct
     public  class GetByOrderIdOrderProductRequest : IRequest<List<GetByOrderIdOrderProductResponse>>
     {
         public int OrderId { get; set; }
+        public int CustomerId { get; set; }
+
     }
 }
