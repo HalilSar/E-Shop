@@ -1,6 +1,7 @@
 ﻿using Eshop.Core.Application.Interfaces.Repositories;
 using Eshop.Core.Domain.Entities;
 using Eshop.Infrastructure.Persistence.DbContexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,9 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 
  
 
-        public List<OrderProduct> GetByOrderId(int id)
+        public  async Task< List<OrderProduct>> GetByOrderId(int id,int customerId)
         {
-            return _applicationDbContext.Set<OrderProduct>().Where(x => x.OrderId == id).ToList();
+            return  await _applicationDbContext.Set<OrderProduct>().Where(x => x.OrderId == id && x.CustomerId==customerId).ToListAsync();
 
         }
     }
