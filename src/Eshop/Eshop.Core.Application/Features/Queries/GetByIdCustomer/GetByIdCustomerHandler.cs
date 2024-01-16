@@ -21,7 +21,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByIdCustomer
         }
         public async Task<GetByIdCustomerResponse> Handle(GetByIdCustomerRequest request, CancellationToken cancellationToken)
         {
-            var customer = _customerRepository.GetById(request.Id);
+            var customer = await _customerRepository.GetById(request.Id);
             return _mapper.Map<GetByIdCustomerResponse>(customer); 
         }
     }

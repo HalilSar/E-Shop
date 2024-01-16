@@ -21,7 +21,7 @@ namespace Eshop.Core.Application.Features.Queries.GetCategory
         }
         public  async Task<List<GetCategoryResponse>> Handle(GetCategoryRequest request, CancellationToken cancellationToken)
         {
-            var categories = _categoryRepository.Get();
+            var categories =await _categoryRepository.Get();
             return _mapper.Map<List<GetCategoryResponse>>(categories);
         }
     }
