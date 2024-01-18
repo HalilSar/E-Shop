@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshop.Core.Application", "E
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshop.Infrastructure.Persistence", "Eshop.Infrastructure.Persistence\Eshop.Infrastructure.Persistence.csproj", "{43F00EB9-550F-45E3-8C4C-15694DA62D45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Infrastructure.Infrastructure", "Eshop.Infrastructure.Infrastructure\Eshop.Infrastructure.Infrastructure.csproj", "{3FF6611F-4522-4E1B-813C-CC1EC0361A9F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eshop.Infrastructure.Infrastructure", "Eshop.Infrastructure.Infrastructure\Eshop.Infrastructure.Infrastructure.csproj", "{3FF6611F-4522-4E1B-813C-CC1EC0361A9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eshop.Presentation.Mvc", "Eshop.Presentation.Mvc\Eshop.Presentation.Mvc.csproj", "{FABA0F28-E369-4F8C-82EA-E900D9ABBCCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{3FF6611F-4522-4E1B-813C-CC1EC0361A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FF6611F-4522-4E1B-813C-CC1EC0361A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FF6611F-4522-4E1B-813C-CC1EC0361A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABA0F28-E369-4F8C-82EA-E900D9ABBCCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABA0F28-E369-4F8C-82EA-E900D9ABBCCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABA0F28-E369-4F8C-82EA-E900D9ABBCCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABA0F28-E369-4F8C-82EA-E900D9ABBCCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
