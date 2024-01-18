@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Eshop.Infrastructure.Infrastructure\Eshop.Infrastructure.Infrastructure.csproj" />
+    <ProjectReference Include="..\Eshop.Infrastructure.Persistence\Eshop.Infrastructure.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
