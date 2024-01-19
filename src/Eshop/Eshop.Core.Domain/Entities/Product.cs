@@ -11,6 +11,7 @@ namespace Eshop.Core.Domain.Entities
         public string Detail { get; set; }
         public int CategoryId { get; set; }
         public int Amount { get; set; }
+        public double Price { get; set; }
         public Category Category { get; set; }
         public List<CartItem> CartItems { get; set; }
         public List<OrderProduct> OrderProducts { get; set; }
