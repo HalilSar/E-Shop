@@ -15,9 +15,22 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
         //{
 
         //}
-        public void OnConfiguring(DbContextOptionsBuilder<ApplicationDbContext> options)
+        protected  void OnConfiguring(DbContextOptionsBuilder<ApplicationDbContext> options)
         {
             options.UseSqlServer("Your Connection String");
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<Category>().HasData(
+                new Category { Title = "CategoryA" },
+                new Category { Title = "CategoryB" },
+                new Category { Title = "CategoryC" },
+                new Category { Title = "CategoryD" },
+                new Category { Title = "CategoryE" },
+                new Category { Title = "CategoryF" },
+                new Category { Title = "CategoryG" }
+                );
         }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
