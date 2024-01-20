@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Eshop.Core.Application.Interfaces.Context;
 using Microsoft.EntityFrameworkCore;
 using Eshop.Core.Domain.Entities;
+using Eshop.Infrastructure.Persistence.Configurations;
+
 namespace Eshop.Infrastructure.Persistence.DbContexts
 {
     public  class ApplicationDbContext:DbContext,IApplicationDbContext
@@ -118,6 +120,12 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                              }
 
                ) ;
+            builder.ApplyConfiguration(new ProductConfiguration());
+            builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new OrderProductConfiguration());
+            builder.ApplyConfiguration(new OrderConfiguration());
+            builder.ApplyConfiguration(new CustomerConfiguration());
+            builder.ApplyConfiguration(new CartItemConfiguration());
         }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
