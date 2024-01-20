@@ -57,7 +57,8 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                                   Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
                                   CreatedDate = DateTime.Now,
                                   Price = 20.0
-                              }, new Product
+                              },
+                              new Product
                               {
                                   Title = "Product2",
                                   Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
@@ -71,7 +72,8 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                                   Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
                                   CreatedDate = DateTime.Now,
                                   Price = 20.0
-                              }, new Product
+                              },
+                              new Product
                               {
                                   Title = "Product3",
                                   Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
@@ -87,7 +89,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                                   Price = 20.0
 
                               },
-                               new Product
+                              new Product
                                {
                                    Title = "Product4",
                                    Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
@@ -103,7 +105,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                                    Price = 20.0
 
                                },
-                             new Product
+                              new Product
                              {
                                  Title = "Product5",
                                  Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
