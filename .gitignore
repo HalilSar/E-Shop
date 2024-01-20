@@ -15,5 +15,5 @@ _ReSharper*/
 *.sln.iml
 *.log
 
-
+appsettings.Development.json
 problems.txt

@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -25,6 +26,12 @@ namespace Eshop.Presentation.Mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            if(Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")== "Development")
+            {
+                var developmentConfig = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true).Build();
+                services.AddSingleton(developmentConfig);
+            }
             services.AddPersistenceServices();
             services.AddInfrastructureServices();
             services.AddControllersWithViews();
@@ -36,6 +43,7 @@ namespace Eshop.Presentation.Mvc
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                
             }
             else
             {
