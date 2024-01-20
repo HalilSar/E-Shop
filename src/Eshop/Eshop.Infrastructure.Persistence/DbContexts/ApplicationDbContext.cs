@@ -7,19 +7,20 @@ using Eshop.Core.Application.Interfaces.Context;
 using Microsoft.EntityFrameworkCore;
 using Eshop.Core.Domain.Entities;
 using Eshop.Infrastructure.Persistence.Configurations;
+using Microsoft.Extensions.Configuration;
 
 namespace Eshop.Infrastructure.Persistence.DbContexts
 {
     public  class ApplicationDbContext:DbContext,IApplicationDbContext
     {
-        // IConfiguration configuration;
-        //public ApplicationDbContext()
-        //{
-
-        //}
+        IConfiguration _configuration;
+        public ApplicationDbContext(IConfiguration configuration)
+        {
+            _configuration= configuration;
+        }
         protected  void OnConfiguring(DbContextOptionsBuilder<ApplicationDbContext> options)
         {
-            options.UseSqlServer("Your Connection String");
+            options.UseSqlServer(_configuration.GetConnectionString("ConnectString"));
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
