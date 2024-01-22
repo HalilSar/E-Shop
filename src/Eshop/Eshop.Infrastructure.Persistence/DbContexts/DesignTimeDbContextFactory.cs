@@ -17,7 +17,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
         {
             DbContextOptionsBuilder<TContext> builder = new DbContextOptionsBuilder<TContext>();
             IConfiguration configuration = new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Eshop.Presentation."))
+                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Eshop.Presentation.Mvc"))
                 .AddJsonFile("appsettings.Development.json").Build();
             builder.UseSqlServer(configuration.GetConnectionString("ConnectionString"));
             return CreateNewInstance(builder.Options);
