@@ -13,14 +13,9 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
 {
     public  class ApplicationDbContext:DbContext,IApplicationDbContext
     {
-        IConfiguration _configuration;
-        public ApplicationDbContext(IConfiguration configuration)
-        {
-            _configuration= configuration;
-        }
-        protected  void OnConfiguring(DbContextOptionsBuilder<ApplicationDbContext> options)
-        {
-            options.UseSqlServer(_configuration.GetConnectionString("ConnectString"));
+
+        public ApplicationDbContext(DbContextOptions dbContextOption):base(dbContextOption)
+        {          
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
