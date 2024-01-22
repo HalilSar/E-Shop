@@ -31,8 +31,9 @@ namespace Eshop.Presentation.Mvc
                 var developmentConfig = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory())
                     .AddJsonFile("appsettings.Development.json", optional: true, reloadOnChange: true).Build();
                 services.AddSingleton(developmentConfig);
-            }
-            services.AddPersistenceServices();
+            }               
+    
+            services.AddPersistenceServices(Configuration.GetConnectionString("ConnectionString"));
             services.AddInfrastructureServices();
             services.AddControllersWithViews();
         }
