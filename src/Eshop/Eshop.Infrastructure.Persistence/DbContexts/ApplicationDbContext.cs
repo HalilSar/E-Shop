@@ -21,13 +21,13 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Category>().HasData(
-                new Category { Title = "CategoryA" },
-                new Category { Title = "CategoryB" },
-                new Category { Title = "CategoryC" },
-                new Category { Title = "CategoryD" },
-                new Category { Title = "CategoryE" },
-                new Category { Title = "CategoryF" },
-                new Category { Title = "CategoryG" }
+                new Category {Id=1, Title = "CategoryA" },
+                new Category { Id=2,Title = "CategoryB" },
+                new Category {Id=3, Title = "CategoryC" },
+                new Category {Id=4, Title = "CategoryD" },
+                new Category { Id = 5, Title = "CategoryE" },
+                new Category { Id = 6, Title = "CategoryF" },
+                new Category { Id = 7, Title = "CategoryG" }
                 );
             builder.Entity<Product>().HasData(
                new Product { Title = "Product1", Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
