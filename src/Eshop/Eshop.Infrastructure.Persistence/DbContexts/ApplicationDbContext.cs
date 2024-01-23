@@ -30,7 +30,9 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                 new Category { Id = 7, Title = "CategoryG" }
                 );
             builder.Entity<Product>().HasData(
-               new Product { Title = "Product1", Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
+               new Product { 
+                   Id=1,
+                   Title = "Product1", Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of " +
                "type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic " +
                "typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing " +
@@ -40,6 +42,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                },
                               new Product
                               {
+                                  Id=2,
                                   Title = "Product1.5",
                                   Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of " +
@@ -55,6 +58,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                               },
                               new Product
                               {
+                                  Id=3,
                                   Title = "Product2",
                                   Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of " +
@@ -70,6 +74,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                               },
                               new Product
                               {
+                                  Id=4,
                                   Title = "Product3",
                                   Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of " +
@@ -86,6 +91,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                               },
                               new Product
                                {
+                                  Id=5,
                                    Title = "Product4",
                                    Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of " +
@@ -102,6 +108,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                                },
                               new Product
                              {
+                                  Id=6,
                                  Title = "Product5",
                                  Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of " +
