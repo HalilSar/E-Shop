@@ -21,5 +21,12 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
             return await _applicationDbContext.Set<Product>().Where(x => x.CategoryId == id).ToListAsync();
         }
+
+        public async Task<List<Product>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
+        {
+            var product = Get().Result;
+            return  product.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
+               
+        }
     }
 }
