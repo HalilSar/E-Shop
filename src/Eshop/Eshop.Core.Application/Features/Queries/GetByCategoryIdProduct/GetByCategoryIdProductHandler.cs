@@ -22,7 +22,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct
 
         public async Task<List<GetByCategoryIdProductResponse>> Handle(GetByCategoryIdProductResquest request, CancellationToken cancellationToken)
         {
-            var products = await _productRepository.GetByCatId(request.CategoryId);
+            var products = await _productRepository.GetByCatId(request.CategoryId,request.perPageProduct,request.currentPage);
             return _mapper.Map<List<GetByCategoryIdProductResponse>>(products);
         }
 
