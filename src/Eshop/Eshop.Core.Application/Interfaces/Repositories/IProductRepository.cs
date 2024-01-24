@@ -9,7 +9,7 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 {
     public  interface IProductRepository:IRepository<Product>
     {
-        Task<List<Product>> GetByCatId(int id);
+        Task<List<Product>> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1);
         Task<List<Product>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1);
     }
 }
