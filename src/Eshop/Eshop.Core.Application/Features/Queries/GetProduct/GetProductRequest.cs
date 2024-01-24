@@ -9,5 +9,6 @@ namespace Eshop.Core.Application.Features.Queries.GetProduct
 {
     public class GetProductRequest : IRequest<List<GetProductResponse>>
     {
+        public int currentPage;
     }
 }
