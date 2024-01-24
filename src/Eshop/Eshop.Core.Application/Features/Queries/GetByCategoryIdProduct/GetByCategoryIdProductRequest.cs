@@ -11,5 +11,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct
     {
 
         public int CategoryId { get; set; }
+        public int perPageProduct;
+        public int currentPage;
     }
 }

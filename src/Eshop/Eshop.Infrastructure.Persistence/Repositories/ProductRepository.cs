@@ -17,15 +17,16 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
             _applicationDbContext = applicationDbContext;
         }
-        public async Task<List<Product>> GetByCatId(int id)
+        public async Task<List<Product>> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1)
         {
-            return await _applicationDbContext.Set<Product>().Where(x => x.CategoryId == id).ToListAsync();
+            var catlist = await _applicationDbContext.Set<Product>().Where(x => x.CategoryId == id).ToListAsync();
+            return catlist.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
         }
 
         public async Task<List<Product>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
         {
             var product = Get().Result;
-            return  product.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
+            return   product.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
                
         }
     }
