@@ -23,7 +23,7 @@ namespace Eshop.Core.Application.Features.Queries.GetProduct
         }
         public async Task<List<GetProductResponse>> Handle(GetProductRequest request, CancellationToken cancellationToken)
         {
-            var products =await  _productRepository.Get();
+            var products =await  _productRepository.GetPerPageProducts(request.perPageProductCount, request.currentPage);
             return  _mapper.Map<List<GetProductResponse>>(products);
            
         }
