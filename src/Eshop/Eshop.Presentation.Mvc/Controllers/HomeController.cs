@@ -1,4 +1,6 @@
-﻿using Eshop.Presentation.Mvc.Models;
+﻿using Eshop.Core.Application.Features.Queries.GetProduct;
+using Eshop.Presentation.Mvc.Models;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,15 +14,18 @@ namespace Eshop.Presentation.Mvc.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IMediator _mediatR;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IMediator mediatR)
         {
             _logger = logger;
+            _mediatR = mediatR;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(GetProductRequest request)
         {
-            return View();
+            var products = _mediatR.Send(request);
+            return View(products);
         }
 
         public IActionResult Privacy()
