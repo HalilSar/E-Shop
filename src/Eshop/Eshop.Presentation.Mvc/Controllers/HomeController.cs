@@ -1,4 +1,5 @@
-﻿using Eshop.Core.Application.Features.Queries.GetByIdProduct;
+﻿using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
+using Eshop.Core.Application.Features.Queries.GetByIdProduct;
 using Eshop.Core.Application.Features.Queries.GetProduct;
 using Eshop.Presentation.Mvc.Models;
 using MediatR;
@@ -30,6 +31,11 @@ namespace Eshop.Presentation.Mvc.Controllers
         }
 
         public IActionResult Detail(GetByIdProductRequest request)
+        {
+            var products = _mediatR.Send(request);
+            return View(products);
+        }
+        public IActionResult GetCategoryId(GetByCategoryIdProductResquest request)
         {
             var products = _mediatR.Send(request);
             return View(products);

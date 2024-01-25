@@ -1,0 +1,19 @@
+﻿@model List<GetByCategoryIdProductResponse>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@foreach (var item in Model)
+{
+    <h1>@item.Title</h1>
+    <h2>@item.Description</h2>
+    <h2>@item.Image</h2>
+    <h2>@item.Id</h2>
+    <h2>@item.Amount</h2>
+    <h2>@item.Price</h2>
+}
