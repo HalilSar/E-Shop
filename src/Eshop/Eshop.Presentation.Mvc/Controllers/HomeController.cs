@@ -1,4 +1,5 @@
-﻿using Eshop.Core.Application.Features.Queries.GetProduct;
+﻿using Eshop.Core.Application.Features.Queries.GetByIdProduct;
+using Eshop.Core.Application.Features.Queries.GetProduct;
 using Eshop.Presentation.Mvc.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -28,9 +29,10 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View(products);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Detail(GetByIdProductRequest request)
         {
-            return View();
+            var products = _mediatR.Send(request);
+            return View(products);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
