@@ -1,4 +1,5 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateCartItem;
+using Eshop.Core.Application.Features.Commands.UpdateCartItem;
 using Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -30,11 +31,21 @@ namespace Eshop.Presentation.Mvc.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         public IActionResult Add(CreateCartItemRequest request)
         {         
             return View(_mediatR.Send(request));
         }
+        public IActionResult Update()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Update(UpdateCartItemRequest request)
+        {
+            return View(_mediatR.Send(request));
+        }
+
 
     }
 }
