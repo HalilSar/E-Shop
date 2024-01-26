@@ -1,4 +1,5 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateCartItem;
+using Eshop.Core.Application.Features.Commands.DeleteCartItem;
 using Eshop.Core.Application.Features.Commands.UpdateCartItem;
 using Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem;
 using MediatR;
@@ -46,6 +47,11 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View(_mediatR.Send(request));
         }
 
+        [HttpPost]
+        public IActionResult Delete(DeleteCartItemRequest request)
+        {
+            return View(_mediatR.Send(request));
+        }
 
     }
 }
