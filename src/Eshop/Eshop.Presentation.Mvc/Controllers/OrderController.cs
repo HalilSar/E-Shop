@@ -1,4 +1,5 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateOrder;
+using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrder;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -20,9 +21,10 @@ namespace Eshop.Presentation.Mvc.Controllers
             _mediatR = mediatR;
         }
 
-        public IActionResult Cart(GetByCustormerIdCartItemRequest request)
-        {        // Burayı güncelle. customerId sini nasıl user.id sistemine katarım.  
+        public IActionResult Orders(GetByCustomerIdOrderRequest request)
+        {
             return View(_mediatR.Send(request));
+
         }
 
         public IActionResult Add()
@@ -34,21 +36,7 @@ namespace Eshop.Presentation.Mvc.Controllers
         {         
             return View(_mediatR.Send(request));
         }
-        public IActionResult Update()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Update(UpdateCartItemRequest request)
-        {
-            return View(_mediatR.Send(request));
-        }
 
-        [HttpPost]
-        public IActionResult Delete(DeleteCartItemRequest request)
-        {
-            return View(_mediatR.Send(request));
-        }
 
     }
 }
