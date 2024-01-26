@@ -1,5 +1,6 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateOrder;
 using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrder;
+using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -21,7 +22,12 @@ namespace Eshop.Presentation.Mvc.Controllers
             _mediatR = mediatR;
         }
 
-        public IActionResult Orders(GetByCustomerIdOrderRequest request)
+        public IActionResult Order(GetByCustomerIdOrderRequest request)
+        {
+            return View(_mediatR.Send(request));
+
+        }
+        public IActionResult Orders(GetByCustomerIdOrdersRequest request)
         {
             return View(_mediatR.Send(request));
 
