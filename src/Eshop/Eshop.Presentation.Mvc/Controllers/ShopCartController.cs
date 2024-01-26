@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Eshop.Core.Application.Features.Queries.GetByCustormerIdCartItem;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -17,6 +18,11 @@ namespace Eshop.Presentation.Mvc.Controllers
         {
             _logger = logger;
             _mediatR = mediatR;
+        }
+
+        public IActionResult ShopCart(GetByCustormerIdCartItemRequest request)
+        {          
+            return View(_mediatR.Send(request));
         }
     }
 }
