@@ -12,12 +12,12 @@ using System.Threading.Tasks;
 
 namespace Eshop.Presentation.Mvc.Controllers
 {
-    public class ShopCartController : Controller
+    public class OrderController : Controller
     {
-        private readonly ILogger<ShopCartController> _logger;
+        private readonly ILogger<OrderController> _logger;
         private readonly IMediator _mediatR;
 
-        public ShopCartController(ILogger<ShopCartController> logger, IMediator mediatR)
+        public OrderController(ILogger<OrderController> logger, IMediator mediatR)
         {
             _logger = logger;
             _mediatR = mediatR;
