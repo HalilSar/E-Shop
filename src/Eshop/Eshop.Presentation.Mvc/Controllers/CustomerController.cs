@@ -1,4 +1,5 @@
-﻿using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
+﻿using Eshop.Core.Application.Features.Commands.CreateCustomer;
+using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
 using Eshop.Core.Application.Features.Queries.GetByIdCustomer;
 using Eshop.Core.Application.Features.Queries.GetByIdProduct;
 using Eshop.Core.Application.Features.Queries.GetProduct;
@@ -25,10 +26,14 @@ namespace Eshop.Presentation.Mvc.Controllers
             _mediatR = mediatR;
         }
 
-        public IActionResult Index(GetProductRequest request)
+        public IActionResult Add()
         {
-            var products = _mediatR.Send(request);
-            return View(products);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Add(CreateCustomerRequest request)
+        {
+            return View(_mediatR.Send(request));
         }
 
         public IActionResult Detail(GetByIdProductRequest request)
