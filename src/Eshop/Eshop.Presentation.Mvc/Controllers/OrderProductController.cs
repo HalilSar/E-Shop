@@ -1,4 +1,5 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateOrder;
+using Eshop.Core.Application.Features.Commands.CreateOrderProduct;
 using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrder;
 using Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders;
 using Eshop.Core.Application.Features.Queries.GetByOrderIdOrderProduct;
@@ -28,12 +29,9 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View(_mediatR.Send(request));
         }
 
-        public IActionResult Add()
-        {
-            return View();
-        }
+
         [HttpPost]
-        public IActionResult Add(CreateOrderRequest request)
+        public IActionResult Add(CreateOrderProductRequest request)
         {         
             return View(_mediatR.Send(request));
         }
