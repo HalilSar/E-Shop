@@ -1,4 +1,5 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateCustomer;
+using Eshop.Core.Application.Features.Commands.UpdateCustomer;
 using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
 using Eshop.Core.Application.Features.Queries.GetByIdCustomer;
 using Eshop.Core.Application.Features.Queries.GetByIdProduct;
@@ -36,10 +37,14 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View(_mediatR.Send(request));
         }
 
-        public IActionResult Detail(GetByIdProductRequest request)
+        public IActionResult Update()
         {
-            var products = _mediatR.Send(request);
-            return View(products);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Update(UpdateCustomerRequest request)
+        {
+            return View(_mediatR.Send(request));
         }
         public IActionResult GetCustomer(GetByIdCustomerRequest request)
         {
