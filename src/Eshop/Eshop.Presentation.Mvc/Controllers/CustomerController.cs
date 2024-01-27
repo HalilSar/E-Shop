@@ -1,4 +1,5 @@
 ﻿using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
+using Eshop.Core.Application.Features.Queries.GetByIdCustomer;
 using Eshop.Core.Application.Features.Queries.GetByIdProduct;
 using Eshop.Core.Application.Features.Queries.GetProduct;
 using Eshop.Presentation.Mvc.Models;
@@ -13,12 +14,12 @@ using System.Threading.Tasks;
 
 namespace Eshop.Presentation.Mvc.Controllers
 {
-    public class HomeController : Controller
+    public class CustomerController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<CustomerController> _logger;
         private readonly IMediator _mediatR;
 
-        public HomeController(ILogger<HomeController> logger, IMediator mediatR)
+        public CustomerController(ILogger<CustomerController> logger, IMediator mediatR)
         {
             _logger = logger;
             _mediatR = mediatR;
@@ -35,16 +36,11 @@ namespace Eshop.Presentation.Mvc.Controllers
             var products = _mediatR.Send(request);
             return View(products);
         }
-        public IActionResult GetCategoryId(GetByCategoryIdProductResquest request)
+        public IActionResult GetCustomer(GetByIdCustomerRequest request)
         {
             var products = _mediatR.Send(request);
             return View(products);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
     }
 }
