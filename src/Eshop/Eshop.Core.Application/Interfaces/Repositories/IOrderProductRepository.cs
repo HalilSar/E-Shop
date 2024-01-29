@@ -9,6 +9,7 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 {
   public  interface IOrderProductRepository:IRepository<OrderProduct>
     {
+        Task CreateOrderProducts(int customerId, int orderId);
         Task<List<OrderProduct>> GetByOrderId(int id,  int customerId);
     }
 }

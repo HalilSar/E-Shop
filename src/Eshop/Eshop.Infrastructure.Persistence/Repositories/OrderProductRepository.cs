@@ -18,7 +18,22 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             _applicationDbContext = applicationDbContext;
         }
 
- 
+        public async Task CreateOrderProducts(int customerId,int orderId)
+        {
+            var carts =_applicationDbContext.CartItems.Where(i=>i.CustomerId==customerId);
+            foreach (var item in carts)
+            {
+                var orderProduct = new OrderProduct
+                {
+                     OrderId = orderId,
+                     Amount=item.Amount,
+                     ProductId=item.ProductId,
+                     SubTotal=item.SubTotal,
+                    
+                };
+               await  this.Add(orderProduct);
+            }
+        }
 
         public  async Task< List<OrderProduct>> GetByOrderId(int id,int customerId)
         {
