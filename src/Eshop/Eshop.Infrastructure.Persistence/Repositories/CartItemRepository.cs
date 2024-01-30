@@ -18,6 +18,12 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             _applicationDbContext = applicationDbContext;
         }
 
+        public async Task DeleteCartItems(List<CartItem> cartItems)
+        {
+            _applicationDbContext.CartItems.RemoveRange(cartItems);
+            await _applicationDbContext.SaveChangesAsync();
+        }
+
         public async Task<List<CartItem>> GetByCustormerId(int id)
         {
             return await _applicationDbContext.Set<CartItem>().Where(x => x.CustomerId == id).ToListAsync();

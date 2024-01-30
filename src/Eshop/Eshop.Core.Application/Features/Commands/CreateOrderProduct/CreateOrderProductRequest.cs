@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Eshop.Core.Application.Dto;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,8 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrderProduct
 {
    public class CreateOrderProductRequest : IRequest<CreateOrderProductResponse>
     {
-        public int CustomerId { get; set; }
+
+        public  List<CartItemDto> CartItems { get; set; }
         public int OrderId { get; set; }
-        public int ProductId { get; set; }
-        public int Amount { get; set; }
-        public double SubTotal { get; set; }
-        public DateTime CreatedDate { get; set; }
     }
 }
