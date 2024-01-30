@@ -14,6 +14,7 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrder
    public class CreateOrderHandler:IRequestHandler<CreateOrderRequest,CreateOrderResponse>
     {
         IOrderRepository _orderRepository;
+        IOrderProductRepository _orderProductRepository;
         IMapper _mapper;
         public CreateOrderHandler(IOrderRepository orderRepository, IMapper mapper)
         {
@@ -23,6 +24,7 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrder
 
         public async Task<CreateOrderResponse> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
         {
+            // var carts =_applicationDbContext.CartItems.Where(i=>i.CustomerId==customerId);
             var order = _mapper.Map<Order>(request);
            await _orderRepository.Add(order);
             return new CreateOrderResponse { Success = "Order eklendi" };
