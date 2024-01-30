@@ -11,7 +11,7 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrderProduct
    public class CreateOrderProductRequest : IRequest<CreateOrderProductResponse>
     {
 
-        public  List<CartItemDto> CartItems { get; set; }
+        public int CustomerId { get; set; }
         public int OrderId { get; set; }
     }
 }
