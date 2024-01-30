@@ -14,8 +14,6 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrder
    public class CreateOrderHandler:IRequestHandler<CreateOrderRequest,CreateOrderResponse>
     {
         IOrderRepository _orderRepository;
-        IOrderProductRepository _orderProductRepository;
-        ICartItemRepository _cartItemRepository;
         IMapper _mapper;
         public CreateOrderHandler(IOrderRepository orderRepository, IOrderProductRepository orderProductRepository, ICartItemRepository cartItemRepository, IMapper mapper)
         {
@@ -29,8 +27,8 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrder
 
             var order = _mapper.Map<Order>(request);
            await _orderRepository.Add(order);
-         //   var carts=_cartItemRepository.GetByCustormerId(request.cust)
-          //  _orderProductRepository.CreateOrderProducts(carts)
+         //   var carts = _cartItemRepository.GetByCustormerId(request.CustomerId);
+         //_orderProductRepository.CreateOrderProducts(carts, request.CustomerId,request.)
             return new CreateOrderResponse { Success = "Order eklendi" };
         }
     }
