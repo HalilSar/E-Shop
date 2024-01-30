@@ -15,18 +15,17 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrderProduct
     {
         IOrderProductRepository _orderProductRepository;
         ICartItemRepository _cartItemRepository;
-        IMapper _mapper;
-        public CreateOrderProductHandler(IOrderProductRepository orderProductRepository, ICartItemRepository cartItemRepository, IMapper mapper)
+
+        public CreateOrderProductHandler(IOrderProductRepository orderProductRepository, ICartItemRepository cartItemRepository)
         {
             _orderProductRepository = orderProductRepository;
             _cartItemRepository = cartItemRepository;
-            _mapper = mapper;
         }
 
         public async Task<CreateOrderProductResponse> Handle(CreateOrderProductRequest request, CancellationToken cancellationToken)
         {
-            var carts = _mapper.Map<List<CartItem>>(request.CartItems);
-            await _orderProductRepository.CreateOrderProducts(carts,carts[0].CustomerId,request.OrderId);
+            var carts = await _cartItemRepository.GetByCustormerId(request.CustomerId);
+            await _orderProductRepository.CreateOrderProducts(carts,request.CustomerId,request.OrderId);
             await _cartItemRepository.DeleteCartItems(carts);
             return new CreateOrderProductResponse { Success = "OrderProduct added." };
         }
