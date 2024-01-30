@@ -25,8 +25,9 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrderProduct
 
         public async Task<CreateOrderProductResponse> Handle(CreateOrderProductRequest request, CancellationToken cancellationToken)
         {
-            var order = _mapper.Map<OrderProduct>(request);
-           await _orderProductRepository.Add(order);
+            var carts = _mapper.Map<List<CartItem>>(request.CartItems);
+            await _orderProductRepository.CreateOrderProducts(carts,carts[0].CustomerId,request.OrderId);
+            await _cartItemRepository.DeleteCartItems(carts);
             return new CreateOrderProductResponse { Success = "OrderProduct added." };
         }
     }
