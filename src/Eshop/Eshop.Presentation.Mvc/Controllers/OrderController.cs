@@ -26,8 +26,8 @@ namespace Eshop.Presentation.Mvc.Controllers
         {
             return View(_mediatR.Send(request));
 
-        }
-        public IActionResult Orders(GetByCustomerIdOrdersRequest request)
+        }// Cqrs design pattern nasıl kullanılacak, çünkü bunları tutan bir şey var mı
+        public IActionResult OrderList(GetByCustomerIdOrdersRequest request)
         {
             return View(_mediatR.Send(request));
 
