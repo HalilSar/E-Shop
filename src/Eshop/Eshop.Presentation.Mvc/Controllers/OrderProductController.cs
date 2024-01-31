@@ -36,7 +36,9 @@ namespace Eshop.Presentation.Mvc.Controllers
             var result = _mediatR.Send(request);
             if( result.Result.Success== true)
             {
-                return RedirectToAction("Index","Home");
+                return RedirectToAction("OrderProducts",new GetByOrderIdOrderProductRequest { 
+                OrderId=request.OrderId, CustomerId=request.CustomerId
+                });
             }
             return View();
         }
