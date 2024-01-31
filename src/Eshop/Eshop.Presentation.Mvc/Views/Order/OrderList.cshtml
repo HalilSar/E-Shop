@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Sipariş Geçmişi";
+}
+@model List<GetByCustomerIdOrdersResponse>
+
+@foreach (var item in Model)
+{
+    <h1>@item.Name</h1>
+    <h2>@item.SurName</h2>
+}
