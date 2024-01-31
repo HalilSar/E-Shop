@@ -24,7 +24,7 @@ namespace Eshop.Presentation.Mvc.Controllers
             _mediatR = mediatR;
         }
 
-        public IActionResult OrderProducts(GetByOrderIdOrderProductRequest request)
+        public IActionResult OrderProductList(GetByOrderIdOrderProductRequest request)
         {
             return View(_mediatR.Send(request));
         }
