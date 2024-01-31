@@ -33,12 +33,12 @@ namespace Eshop.Presentation.Mvc.Controllers
 
         }
 
-        public IActionResult Add()
+        public IActionResult AddOrder()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Add(CreateOrderRequest request)
+        public IActionResult AddOrder(CreateOrderRequest request)
         {         
             return View(_mediatR.Send(request));
         }
