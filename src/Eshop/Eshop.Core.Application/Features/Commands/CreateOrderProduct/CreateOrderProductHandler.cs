@@ -27,7 +27,7 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrderProduct
             var carts = await _cartItemRepository.GetByCustormerId(request.CustomerId);
             await _orderProductRepository.CreateOrderProducts(carts,request.CustomerId,request.OrderId);
             await _cartItemRepository.DeleteCartItems(carts);
-            return new CreateOrderProductResponse { Success = "OrderProduct added." };
+            return new CreateOrderProductResponse { Success = true };
         }
     }
 }

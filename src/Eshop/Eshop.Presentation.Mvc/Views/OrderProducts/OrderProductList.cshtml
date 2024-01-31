@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Sipariş Ürün Detayı";
+}
+@model List<GetByOrderIdOrderProductResponse>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@foreach (var item in Model)
+{
+    <h1>@item.CustomerId</h1>
+    <h2>@item.Amount</h2>
+    <h2>@item.Id</h2>
+    <h2>@item.OrderId</h2>
+    <h2>@item.SubTotal</h2>
+}
