@@ -32,8 +32,13 @@ namespace Eshop.Presentation.Mvc.Controllers
 
         [HttpPost]
         public IActionResult Add(CreateOrderProductRequest request)
-        {         
-            return View(_mediatR.Send(request));
+        {
+            var result = _mediatR.Send(request);
+            if( result.Result.Success== true)
+            {
+                return RedirectToAction("Index","Home");
+            }
+            return View();
         }
 
 
