@@ -22,7 +22,7 @@ namespace Eshop.Presentation.Mvc.Controllers
             _mediatR = mediatR;
         }
 
-        public IActionResult Order(GetByCustomerIdOrderRequest request)
+        public IActionResult OrderDetail(GetByCustomerIdOrderRequest request)
         {
             return View(_mediatR.Send(request));
 
