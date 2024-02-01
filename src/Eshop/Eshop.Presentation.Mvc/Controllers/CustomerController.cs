@@ -1,18 +1,9 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateCustomer;
 using Eshop.Core.Application.Features.Commands.UpdateCustomer;
-using Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct;
 using Eshop.Core.Application.Features.Queries.GetByIdCustomer;
-using Eshop.Core.Application.Features.Queries.GetByIdProduct;
-using Eshop.Core.Application.Features.Queries.GetProduct;
-using Eshop.Presentation.Mvc.Models;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Eshop.Presentation.Mvc.Controllers
 {

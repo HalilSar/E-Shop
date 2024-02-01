@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Eshop.Infrastructure.Persistence\Eshop.Infrastructure.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Customer\" />
+  </ItemGroup>
+
 </Project>
