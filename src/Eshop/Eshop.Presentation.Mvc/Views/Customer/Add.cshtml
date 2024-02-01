@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "Kullanıcı Oluştur";
+}
+@model CreateCustomerRequest
+<form asp-action="AddOrder" method="post">
+    <input type="text" name="@Model.Firstname" value="" />
+    <input type="text" name="@Model.LastName" value="" />
+    <input type="text" name="@Model.Email" value="" />
+    <input type="text" name="@Model.Password" value="" />
+</form>
