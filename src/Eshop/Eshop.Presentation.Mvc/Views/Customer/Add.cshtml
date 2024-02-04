@@ -4,8 +4,8 @@
 }
 @model CreateCustomerRequest
 <form asp-action="AddOrder" method="post">
-    <input type="text" name="@Model.Firstname" value="" />
-    <input type="text" name="@Model.LastName" value="" />
-    <input type="text" name="@Model.Email" value="" />
-    <input type="text" name="@Model.Password" value="" />
+    <input type="text" asp-for="@Model.Firstname" value="" />
+    <input type="text" asp-for="@Model.LastName" value="" />
+    <input type="text" asp-for="@Model.Email" value="" />
+    <input type="text" asp-for="@Model.Password" value="" />
 </form>
