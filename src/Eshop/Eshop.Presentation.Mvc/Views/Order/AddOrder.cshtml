@@ -4,8 +4,8 @@
 @model CreateOrderRequest
 <form asp-action="AddOrder" method="post">
 
-    <input type="text" name="@Model.Name" value="" />
-    <input type="text" name="@Model.SurName" value="" />
-    <input type="text" name="@Model.PhoneNumber" value="" />
-    <input type="text" name="@Model.Adress" value="" />
+    <input type="text" asp-for="@Model.Name" value="" />
+    <input type="text" asp-for="@Model.SurName" value="" />
+    <input type="text" asp-for="@Model.PhoneNumber" value="" />
+    <input type="text" asp-for="@Model.Adress" value="" />
 </form>
