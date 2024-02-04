@@ -25,7 +25,7 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 
         public async Task<List<Product>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
         {
-            var product = Get().Result;
+            var product = await Get();
             return   product.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
                
         }
