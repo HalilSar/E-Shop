@@ -127,10 +127,11 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                ) ;
             builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
-            builder.ApplyConfiguration(new OrderProductConfiguration());
-            builder.ApplyConfiguration(new OrderConfiguration());
             builder.ApplyConfiguration(new CustomerConfiguration());
             builder.ApplyConfiguration(new CartItemConfiguration());
+            builder.ApplyConfiguration(new OrderConfiguration());
+            builder.ApplyConfiguration(new OrderProductConfiguration());
+            
         }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
