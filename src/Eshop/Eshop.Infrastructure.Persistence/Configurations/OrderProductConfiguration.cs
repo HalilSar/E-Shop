@@ -15,7 +15,7 @@ namespace Eshop.Infrastructure.Persistence.Configurations
         {
             builder.HasKey(u => u.Id);
            builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId);
-            builder.HasOne<Order>().WithMany().HasForeignKey(i => i.OrderId);  
+            builder.HasOne<Order>().WithMany().HasForeignKey(i => i.OrderId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne<Product>().WithMany().HasForeignKey(i => i.ProductId);
         }// .OnDelete(DeleteBehavior.Cascade)
     }
