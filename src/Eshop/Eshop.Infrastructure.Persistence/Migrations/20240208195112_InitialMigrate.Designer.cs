@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eshop.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240123112411_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240208195112_InitialMigrate")]
+    partial class InitialMigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -338,7 +338,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 1,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 1, 23, 14, 24, 10, 340, DateTimeKind.Local).AddTicks(6255),
+                            CreatedDate = new DateTime(2024, 2, 8, 22, 51, 10, 189, DateTimeKind.Local).AddTicks(8041),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -351,7 +351,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 2,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 1, 23, 14, 24, 10, 346, DateTimeKind.Local).AddTicks(4463),
+                            CreatedDate = new DateTime(2024, 2, 8, 22, 51, 10, 191, DateTimeKind.Local).AddTicks(6362),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -364,7 +364,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 3,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 1, 23, 14, 24, 10, 346, DateTimeKind.Local).AddTicks(4500),
+                            CreatedDate = new DateTime(2024, 2, 8, 22, 51, 10, 191, DateTimeKind.Local).AddTicks(6430),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -377,7 +377,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 4,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 1, 23, 14, 24, 10, 346, DateTimeKind.Local).AddTicks(4504),
+                            CreatedDate = new DateTime(2024, 2, 8, 22, 51, 10, 191, DateTimeKind.Local).AddTicks(6435),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -390,7 +390,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 5,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 1, 23, 14, 24, 10, 346, DateTimeKind.Local).AddTicks(4507),
+                            CreatedDate = new DateTime(2024, 2, 8, 22, 51, 10, 191, DateTimeKind.Local).AddTicks(6438),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -403,7 +403,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 6,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 1, 23, 14, 24, 10, 346, DateTimeKind.Local).AddTicks(4510),
+                            CreatedDate = new DateTime(2024, 2, 8, 22, 51, 10, 191, DateTimeKind.Local).AddTicks(6442),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -470,7 +470,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                     b.HasOne("Eshop.Core.Domain.Entities.Order", null)
                         .WithMany()
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Eshop.Core.Domain.Entities.Order", "Order")
