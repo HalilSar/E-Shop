@@ -26,8 +26,9 @@ namespace Eshop.Presentation.Mvc.Controllers
 
         public IActionResult Index(GetProductRequest request)
         {
+            request.perPageProductCount = 4;
             var products = _mediatR.Send(request);
-            return View(products);
+            return View(products.Result);
         }
 
         public IActionResult Detail(GetByIdProductRequest request)
