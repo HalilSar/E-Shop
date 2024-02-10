@@ -6,17 +6,26 @@
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+<div class="container">
+    <div class="row">
 
-@foreach (var item in Model)
-{
-    <h1>@item.Title</h1>
-    <h2>@item.Description</h2>
-    <h2>@item.Image</h2>
-    <h2>@item.Id</h2>
 
-}
-<h1>Khalil Abraham YellowStone</h1>
-@if (Model == null)
-{
-    <h1>Non-Value</h1>
-}
+        @foreach (var item in Model)
+        {
+        <div class="col-6">
+            <div class="card">
+
+                <h2 class="card-title">@item.Title</h2>
+                <img class="card-img-top" src="/img/pexels-math-90946.jpg"/> <!--Absolute yetiyor-->
+                <div class="card-body">
+                  <p>
+                      @item.Description
+                  </p>
+                </div>
+            </div>
+        </div>
+                }
+
+            
+        </div>
+</div>
