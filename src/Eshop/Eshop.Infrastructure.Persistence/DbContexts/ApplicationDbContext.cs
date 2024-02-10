@@ -30,7 +30,7 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                 new Category { Id = 7, Title = "CategoryG" }
                 );
             builder.Entity<Product>().HasData(
-               new Product { 
+                              new Product { 
                    Id=1,
                    Title = "Product1", Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. " +
                "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of " +
