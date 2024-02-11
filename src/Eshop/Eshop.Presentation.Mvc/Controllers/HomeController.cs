@@ -34,7 +34,7 @@ namespace Eshop.Presentation.Mvc.Controllers
         public IActionResult Detail(GetByIdProductRequest request)
         {
             var products = _mediatR.Send(request);
-            return View(products);
+            return View(products.Result);
         }
         public IActionResult GetByCategoryId(GetByCategoryIdProductResquest request)
         {
