@@ -38,6 +38,7 @@ namespace Eshop.Presentation.Mvc.Controllers
         }
         public IActionResult GetCategoryId(GetByCategoryIdProductResquest request)
         {
+            request.perPageProduct = 4;
             var products = _mediatR.Send(request);
             return View(products);
         }
