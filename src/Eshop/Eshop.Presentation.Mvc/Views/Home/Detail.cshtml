@@ -4,12 +4,22 @@
 }
 
 
-
-<h1>@ViewData["Title"]</h1>
-<h3>@Model.Title</h3>
-<h3>@Model.Description</h3>
-<h3>@Model.Detail</h3>
-<h3>@Model.Amount</h3>
-<h3>@Model.Price</h3>
-
-
+<div card>
+    <div class="card-header">
+        <h2 class="card-title">@Model.Title</h2>
+    </div>
+    <img class="card-img-top" src="/img/pexels-math-90946.jpg" /> <!--Absolute yetiyor-->
+    <div class="card-body">
+        <h3 class="card-subtitle text-muted"></h3>
+        <p class="car">
+            @Model.Description
+        </p>
+        <hr />
+        <p>
+            @Model.Detail
+        </p>
+        <hr />
+        <h5>@Model.Amount</h5>
+        <h3>@Model.Price</h3>
+    </div>
+</div>
