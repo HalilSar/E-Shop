@@ -16,9 +16,10 @@ namespace Eshop.Presentation.Mvc.ViewComponents
             _meditR = meditR;
         }
 
-        public async Task<List<GetCategoryResponse>> Invoke(GetCategoryRequest request)
+        public IViewComponentResult Invoke()
         {
-           return  await _meditR.Send(request);
+           var catlist = _meditR.Send(new GetCategoryRequest());
+            return  View(catlist.Result);
         }
     }
 }
