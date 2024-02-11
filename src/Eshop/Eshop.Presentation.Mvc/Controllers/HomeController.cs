@@ -36,11 +36,11 @@ namespace Eshop.Presentation.Mvc.Controllers
             var products = _mediatR.Send(request);
             return View(products);
         }
-        public IActionResult GetCategoryId(GetByCategoryIdProductResquest request)
+        public IActionResult GetByCategoryId(GetByCategoryIdProductResquest request)
         {
             request.perPageProduct = 4;
             var products = _mediatR.Send(request);
-            return View(products);
+            return View(products.Result);
         }
 
     }
