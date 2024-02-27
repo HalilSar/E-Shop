@@ -1,4 +1,5 @@
-﻿using Eshop.Core.Application.Interfaces.Repositories;
+﻿using Eshop.Core.Application.Dto;
+using Eshop.Core.Application.Interfaces.Repositories;
 using Eshop.Core.Domain.Entities;
 using Eshop.Infrastructure.Persistence.DbContexts;
 using Microsoft.EntityFrameworkCore;
@@ -23,11 +24,12 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             return catlist.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
         }
 
-        public async Task<List<Product>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
+        public async Task<ProductDto> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
         {
             var product = await Get();
-                ToInt16 Math.Floor(product.Count / numberOfProductsPerPage);
-            return   product.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
+            int pageCount = Convert.ToInt32(Math.Floor(Convert.ToDecimal(product.Count) / numberOfProductsPerPage));
+            return  new ProductDto { Products =product.Skip(numberOfProductsPerPage * (currentPage - 1))
+                       .Take(numberOfProductsPerPage).ToList(), ProductCount=pageCount};
                
         }
     }

@@ -11,6 +11,6 @@ namespace Eshop.Core.Application.Interfaces.Repositories
     public  interface IProductRepository:IRepository<Product>
     {
         Task<List<Product>> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1);
-        Task<List<ProductDto>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1);
+        Task<ProductDto> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1);
     }
 }

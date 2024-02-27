@@ -9,7 +9,7 @@ namespace Eshop.Core.Application.Dto
 {
      public  class ProductDto
     {
-        public List<Product> ProductDtos { get; set; }
+        public List<Product> Products { get; set; }
 
         public int ProductCount { get; set; }
     }
