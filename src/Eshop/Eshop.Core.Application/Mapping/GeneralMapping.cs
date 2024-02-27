@@ -33,7 +33,7 @@ namespace Eshop.Core.Application.Mapping
 
             CreateMap<GetByCategoryIdProductResponse,Product>().ReverseMap();
             CreateMap<GetByIdProductResponse,Product>().ReverseMap();
-            CreateMap<GetProductResponse, Product>().ReverseMap();
+            CreateMap<GetProductDto, Product>().ReverseMap();
 
             CreateMap<GetByIdCustomerResponse, Customer>().ReverseMap();
             CreateMap<Customer, CreateCustomerRequest>().ReverseMap();
