@@ -1,4 +1,5 @@
-﻿using Eshop.Core.Domain.Entities;
+﻿using Eshop.Core.Application.Dto;
+using Eshop.Core.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Eshop.Core.Application.Interfaces.Repositories
     public  interface IProductRepository:IRepository<Product>
     {
         Task<List<Product>> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1);
-        Task<List<Product>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1);
+        Task<List<ProductDto>> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1);
     }
 }

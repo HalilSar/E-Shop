@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Eshop.Core.Application.Dto;
 using Eshop.Core.Application.Interfaces.Repositories;
 using MediatR;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetProduct
 {
-    public class GetProductHandler : IRequestHandler<GetProductRequest, List<GetProductResponse>>
+    public class GetProductHandler : IRequestHandler<GetProductRequest, GetProductResponse>
     {
 
         IProductRepository _productRepository;
@@ -21,10 +22,14 @@ namespace Eshop.Core.Application.Features.Queries.GetProduct
             _mapper = mapper;
 
         }
-        public async Task<List<GetProductResponse>> Handle(GetProductRequest request, CancellationToken cancellationToken)
+        public async Task<GetProductResponse> Handle(GetProductRequest request, CancellationToken cancellationToken)
         {
             var products =await  _productRepository.GetPerPageProducts(request.perPageProductCount, request.currentPage);
-            return  _mapper.Map<List<GetProductResponse>>(products);
+             return new GetProductResponse { 
+                        ProductDtos= _mapper.Map<List<GetProductDto>>(products),
+                 //       ProductCount=products.
+             
+                        };
            
         }
     }
