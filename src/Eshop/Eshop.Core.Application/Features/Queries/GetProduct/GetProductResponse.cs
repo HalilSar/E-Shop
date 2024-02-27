@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Dto
 {
-    public class GetProductDto
+    public class GetProductResponse
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Image { get; set; }
-        public string Detail { get; set; }
+         public List<GetProductDto> ProductDtos { get; set; }
+
+         public int ProductCount { get; set; }
     }
 }

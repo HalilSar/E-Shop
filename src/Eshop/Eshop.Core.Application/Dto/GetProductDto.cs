@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetProduct
+namespace Eshop.Core.Application.Dto
 {
-    public class GetProductResponse
+    public class GetProductDto
     {
         public int Id { get; set; }
         public string Title { get; set; }
