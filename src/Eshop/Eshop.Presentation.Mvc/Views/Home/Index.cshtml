@@ -1,19 +1,19 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model List<GetProductResponse>
+@model GetProductResponse
 
 <div class="container">
     <div class="row">
 
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.ProductDtos)
         {
         <div class="col-6">
             <div class="card">
 
                 <h2 class="card-title">@item.Title</h2>
-                <img class="card-img-top" src="/img/pexels-math-90946.jpg"/> <!--Absolute yetiyor-->
+                <img class="card-img-top" src="/img/pexels-math-90946.jpg"/>
                 <div class="card-body">
                   <p>
                       @item.Description
