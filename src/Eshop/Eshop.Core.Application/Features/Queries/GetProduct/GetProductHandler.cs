@@ -26,8 +26,8 @@ namespace Eshop.Core.Application.Features.Queries.GetProduct
         {
             var products =await  _productRepository.GetPerPageProducts(request.perPageProductCount, request.currentPage);
              return new GetProductResponse { 
-                        ProductDtos= _mapper.Map<List<GetProductDto>>(products),
-                 //       ProductCount=products.
+                        ProductDtos= _mapper.Map<List<GetProductDto>>(products.Products),
+                        ProductCount=products.PageCount
              
                         };
            

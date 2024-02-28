@@ -29,7 +29,7 @@ namespace Eshop.Infrastructure.Persistence.Repositories
             var product = await Get();
             int pageCount = Convert.ToInt32(Math.Floor(Convert.ToDecimal(product.Count) / numberOfProductsPerPage));
             return  new ProductDto { Products =product.Skip(numberOfProductsPerPage * (currentPage - 1))
-                       .Take(numberOfProductsPerPage).ToList(), ProductCount=pageCount};
+                       .Take(numberOfProductsPerPage).ToList(), PageCount=pageCount};
                
         }
     }

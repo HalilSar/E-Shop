@@ -11,6 +11,6 @@ namespace Eshop.Core.Application.Dto
     {
         public List<Product> Products { get; set; }
 
-        public int ProductCount { get; set; }
+        public int PageCount { get; set; }
     }
 }
