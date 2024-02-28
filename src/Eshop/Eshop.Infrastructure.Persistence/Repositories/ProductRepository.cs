@@ -27,7 +27,8 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         public async Task<ProductDto> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
         {
             var product = await Get();
-            int pageCount = Convert.ToInt32(Math.Floor(Convert.ToDecimal(product.Count) / numberOfProductsPerPage));
+            int pageCount = Convert.ToInt32(Math.Round(Convert.ToDecimal(product.Count) / numberOfProductsPerPage));
+            Console.WriteLine(pageCount.ToString());
             return  new ProductDto {
                                         Products =product.Skip(numberOfProductsPerPage * (currentPage - 1))
                                         .Take(numberOfProductsPerPage).ToList(), 

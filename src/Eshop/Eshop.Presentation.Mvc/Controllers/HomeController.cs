@@ -24,10 +24,13 @@ namespace Eshop.Presentation.Mvc.Controllers
             _mediatR = mediatR;
         }
 
-        public IActionResult Index(GetProductRequest request)
+        public IActionResult Index(int id = 1)
         {
-            request.perPageProductCount = 4;
-            var products = _mediatR.Send(request);
+
+            var products = _mediatR.Send(new GetProductRequest{  currentPage=id,
+                                                                   perPageProductCount=4
+                                                                });
+                                                                
             return View(products.Result);
         }
 
