@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct
 {
-   public class GetByCategoryIdProductResquest : IRequest<List<GetByCategoryIdProductResponse>>
+   public class GetByCategoryIdProductResquest : IRequest<GetByCategoryIdProductResponse>
     {
 
         public int CategoryId { get; set; }
