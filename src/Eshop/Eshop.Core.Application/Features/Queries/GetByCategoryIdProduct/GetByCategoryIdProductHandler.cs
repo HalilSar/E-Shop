@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Eshop.Core.Application.Dto;
 using Eshop.Core.Application.Interfaces.Repositories;
 using MediatR;
 using System;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct
 {
-    public class GetByCategoryIdProductHandler : IRequestHandler<GetByCategoryIdProductResquest, List<GetByCategoryIdProductResponse>>
+    public class GetByCategoryIdProductHandler : IRequestHandler<GetByCategoryIdProductResquest, GetByCategoryIdProductResponse>
     {
         IMapper _mapper;
         IProductRepository _productRepository;
@@ -20,10 +21,16 @@ namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct
             _productRepository = productRepository;
         }
 
-        public async Task<List<GetByCategoryIdProductResponse>> Handle(GetByCategoryIdProductResquest request, CancellationToken cancellationToken)
+        public async Task<GetByCategoryIdProductResponse> Handle(GetByCategoryIdProductResquest request, CancellationToken cancellationToken)
         {
             var products = await _productRepository.GetByCatId(request.CategoryId,request.perPageProduct,request.currentPage);
-            return _mapper.Map<List<GetByCategoryIdProductResponse>>(products);
+            return new GetByCategoryIdProductResponse
+            {
+                Products = _mapper.Map<List<GetByCategoryIdProductDto>>(products.Products),
+                CurrentPage = products.CurrentPage,
+                PageCount= products.PageCount
+            };
+
         }
 
     }
