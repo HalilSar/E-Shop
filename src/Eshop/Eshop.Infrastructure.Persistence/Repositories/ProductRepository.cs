@@ -18,17 +18,22 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
             _applicationDbContext = applicationDbContext;
         }
-        public async Task<List<Product>> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1)
+        public async Task<CategoryIdProductDto> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1)
         {
             var catlist = await _applicationDbContext.Set<Product>().Where(x => x.CategoryId == id).ToListAsync();
-            return catlist.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList();
+            int pageCount = Convert.ToInt32(Math.Round(Convert.ToDecimal(catlist.Count) / numberOfProductsPerPage));
+            return new CategoryIdProductDto { 
+                                              Products = catlist.Skip(numberOfProductsPerPage * (currentPage - 1)).Take(numberOfProductsPerPage).ToList(),
+                                              PageCount = pageCount,
+                                              CurrentPage=currentPage
+                                            };
         }
 
         public async Task<ProductDto> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
         {
             var product = await Get();
             int pageCount = Convert.ToInt32(Math.Round(Convert.ToDecimal(product.Count) / numberOfProductsPerPage));
-            Console.WriteLine(pageCount.ToString());
+ 
             return  new ProductDto {
                                         Products =product.Skip(numberOfProductsPerPage * (currentPage - 1))
                                         .Take(numberOfProductsPerPage).ToList(), 

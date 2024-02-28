@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Eshop.Core.Application.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,14 +9,9 @@ namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct
 {
    public class GetByCategoryIdProductResponse
     {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Image { get; set; }
-        public string Detail { get; set; }
-        public int Amount { get; set; }
-        public double Price { get; set; }
-        public int CategoryId { get; set; }
+        public List<GetByCategoryIdProductDto> Products { get; set; }
+        public int PageCount { get; set; }
+        public int CurrentPage { get; set; }
 
     }
 }

@@ -1,4 +1,4 @@
-﻿@model List<GetByCategoryIdProductResponse>
+﻿@model GetByCategoryIdProductResponse
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -7,7 +7,7 @@
     <div class="row">
 
 
-        @foreach (var item in Model)
+        @foreach (var item in Model.Products)
         {
             <div class="col-6">
                 <div class="card">
@@ -22,7 +22,16 @@
                 </div>
             </div>
         }
+        <div class="m-1">
+            @if (Model.PageCount > 1)
+            {
+                @for (int i = 1; i <= Model.PageCount; i++)
+                {
+                    <a href="/Home/Index/@i" type="button" class="btn btn-primary @( i == Model.CurrentPage ? "active" : "")">@i</a>
+                }
 
+            }
+        </div>
 
     </div>
 </div>
