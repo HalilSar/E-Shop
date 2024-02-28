@@ -12,5 +12,7 @@ namespace Eshop.Core.Application.Features.Queries
          public List<GetProductDto> ProductDtos { get; set; }
 
          public int ProductCount { get; set; }
+         public int CurrentPage { get; set; }
+
     }
 }
