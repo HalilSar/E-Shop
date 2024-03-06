@@ -1,11 +1,6 @@
 ﻿using Eshop.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eshop.Infrastructure.Persistence.Configurations
 {
@@ -14,9 +9,9 @@ namespace Eshop.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<OrderProduct> builder)
         {
             builder.HasKey(u => u.Id);
-           builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId);
-            builder.HasOne<Order>().WithMany().HasForeignKey(i => i.OrderId).OnDelete(DeleteBehavior.Restrict);
-            builder.HasOne<Product>().WithMany().HasForeignKey(i => i.ProductId);
-        }// .OnDelete(DeleteBehavior.Cascade)
+            builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId).HasConstraintName("CustomerId");
+            builder.HasOne<Order>().WithMany().HasForeignKey(i => i.OrderId).OnDelete(DeleteBehavior.Restrict).HasConstraintName("OrderId");
+            builder.HasOne<Product>().WithMany().HasForeignKey(i => i.ProductId).HasConstraintName("ProductId");
+        }
     }
 }

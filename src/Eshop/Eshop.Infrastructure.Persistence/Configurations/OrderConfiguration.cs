@@ -1,11 +1,6 @@
 ﻿using Eshop.Core.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eshop.Infrastructure.Persistence.Configurations
 {
@@ -19,7 +14,7 @@ namespace Eshop.Infrastructure.Persistence.Configurations
             builder.Property(i => i.PhoneNumber).IsRequired().HasMaxLength(20);
             builder.Property(i => i.Adress).IsRequired().HasMaxLength(20);
             builder.Property(i => i.Total).IsRequired().HasMaxLength(20);
-            builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId);
+            builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId).HasConstraintName("CustomerId");
 
         }
     }
