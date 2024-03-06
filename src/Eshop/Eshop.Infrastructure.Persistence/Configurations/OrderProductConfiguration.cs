@@ -14,9 +14,9 @@ namespace Eshop.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<OrderProduct> builder)
         {
             builder.HasKey(u => u.Id);
-           builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId);
-            builder.HasOne<Order>().WithMany().HasForeignKey(i => i.OrderId).OnDelete(DeleteBehavior.Restrict);
-            builder.HasOne<Product>().WithMany().HasForeignKey(i => i.ProductId);
-        }// .OnDelete(DeleteBehavior.Cascade)
+            builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId).HasForeignKey("CustomerId");
+            builder.HasOne<Order>().WithMany().HasForeignKey(i => i.OrderId).OnDelete(DeleteBehavior.Restrict).HasForeignKey("OrderId");
+            builder.HasOne<Product>().WithMany().HasForeignKey(i => i.ProductId).HasForeignKey("ProductId");
+        }
     }
 }
