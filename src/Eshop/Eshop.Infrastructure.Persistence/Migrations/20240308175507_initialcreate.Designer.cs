@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eshop.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240307164852_dbcreate13")]
-    partial class dbcreate13
+    [Migration("20240308175507_initialcreate")]
+    partial class initialcreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,13 +37,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProductId1")
                         .HasColumnType("int");
 
                     b.Property<double>("SubTotal")
@@ -56,11 +50,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("CustomerId1");
-
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("ProductId1");
 
                     b.ToTable("CartItems");
                 });
@@ -195,9 +185,6 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(20)
@@ -224,8 +211,6 @@ namespace Eshop.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("CustomerId1");
-
                     b.ToTable("Orders");
                 });
 
@@ -245,19 +230,10 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CustomerId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("OrderId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrderId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProductId1")
                         .HasColumnType("int");
 
                     b.Property<double>("SubTotal")
@@ -270,15 +246,9 @@ namespace Eshop.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.HasIndex("CustomerId1");
-
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("OrderId1");
-
                     b.HasIndex("ProductId");
-
-                    b.HasIndex("ProductId1");
 
                     b.ToTable("OrderProducts");
                 });
@@ -294,9 +264,6 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("CategoryId1")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
@@ -328,8 +295,6 @@ namespace Eshop.Infrastructure.Persistence.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("CategoryId1");
-
                     b.ToTable("Products");
 
                     b.HasData(
@@ -338,7 +303,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 1,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 3, 7, 19, 48, 51, 710, DateTimeKind.Local).AddTicks(7932),
+                            CreatedDate = new DateTime(2024, 3, 8, 20, 55, 6, 144, DateTimeKind.Local).AddTicks(4514),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -351,7 +316,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 2,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 3, 7, 19, 48, 51, 712, DateTimeKind.Local).AddTicks(3601),
+                            CreatedDate = new DateTime(2024, 3, 8, 20, 55, 6, 157, DateTimeKind.Local).AddTicks(2307),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -364,7 +329,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 3,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 3, 7, 19, 48, 51, 712, DateTimeKind.Local).AddTicks(3633),
+                            CreatedDate = new DateTime(2024, 3, 8, 20, 55, 6, 157, DateTimeKind.Local).AddTicks(2360),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -377,7 +342,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 4,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 3, 7, 19, 48, 51, 712, DateTimeKind.Local).AddTicks(3636),
+                            CreatedDate = new DateTime(2024, 3, 8, 20, 55, 6, 157, DateTimeKind.Local).AddTicks(2364),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -390,7 +355,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 5,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 3, 7, 19, 48, 51, 712, DateTimeKind.Local).AddTicks(3639),
+                            CreatedDate = new DateTime(2024, 3, 8, 20, 55, 6, 157, DateTimeKind.Local).AddTicks(2367),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -403,7 +368,7 @@ namespace Eshop.Infrastructure.Persistence.Migrations
                             Id = 6,
                             Amount = 20,
                             CategoryId = 1,
-                            CreatedDate = new DateTime(2024, 3, 7, 19, 48, 51, 712, DateTimeKind.Local).AddTicks(3641),
+                            CreatedDate = new DateTime(2024, 3, 8, 20, 55, 6, 157, DateTimeKind.Local).AddTicks(2371),
                             Description = "lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
                             Detail = "rem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
                             Image = "http://localhost:5000/wwwroot/img/pexels-math-90946.jpg",
@@ -415,27 +380,17 @@ namespace Eshop.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("Eshop.Core.Domain.Entities.CartItem", b =>
                 {
-                    b.HasOne("Eshop.Core.Domain.Entities.Customer", null)
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .HasConstraintName("FK_CartItem_Customer")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Eshop.Core.Domain.Entities.Customer", "Customer")
                         .WithMany("CartItems")
-                        .HasForeignKey("CustomerId1");
-
-                    b.HasOne("Eshop.Core.Domain.Entities.Product", null)
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .HasConstraintName("FK_CartItem_Product")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Eshop.Core.Domain.Entities.Product", "Product")
                         .WithMany("CartItems")
-                        .HasForeignKey("ProductId1");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
 
@@ -444,53 +399,36 @@ namespace Eshop.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("Eshop.Core.Domain.Entities.Order", b =>
                 {
-                    b.HasOne("Eshop.Core.Domain.Entities.Customer", null)
-                        .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .HasConstraintName("FK_OrderProduct_Customer")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("Eshop.Core.Domain.Entities.Customer", "Customer")
                         .WithMany("Orders")
-                        .HasForeignKey("CustomerId1");
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Customer");
                 });
 
             modelBuilder.Entity("Eshop.Core.Domain.Entities.OrderProduct", b =>
                 {
-                    b.HasOne("Eshop.Core.Domain.Entities.Customer", null)
-                        .WithMany()
+                    b.HasOne("Eshop.Core.Domain.Entities.Customer", "Customer")
+                        .WithMany("OrderProducts")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Eshop.Core.Domain.Entities.Customer", "Customer")
+                    b.HasOne("Eshop.Core.Domain.Entities.Order", "Order")
                         .WithMany("OrderProducts")
-                        .HasForeignKey("CustomerId1");
-
-                    b.HasOne("Eshop.Core.Domain.Entities.Order", null)
-                        .WithMany()
                         .HasForeignKey("OrderId")
                         .HasConstraintName("FK_OrderProduct_Order")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Eshop.Core.Domain.Entities.Order", "Order")
+                    b.HasOne("Eshop.Core.Domain.Entities.Product", "Product")
                         .WithMany("OrderProducts")
-                        .HasForeignKey("OrderId1");
-
-                    b.HasOne("Eshop.Core.Domain.Entities.Product", null)
-                        .WithMany()
                         .HasForeignKey("ProductId")
                         .HasConstraintName("FK_OrderProduct_Product")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Eshop.Core.Domain.Entities.Product", "Product")
-                        .WithMany("OrderProducts")
-                        .HasForeignKey("ProductId1");
 
                     b.Navigation("Customer");
 
@@ -501,16 +439,11 @@ namespace Eshop.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("Eshop.Core.Domain.Entities.Product", b =>
                 {
-                    b.HasOne("Eshop.Core.Domain.Entities.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoryId")
-                        .HasConstraintName("FK_Product_Category")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Eshop.Core.Domain.Entities.Category", "Category")
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId1");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Category");
                 });

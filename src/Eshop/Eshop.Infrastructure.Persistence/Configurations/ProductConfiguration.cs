@@ -11,7 +11,7 @@ namespace Eshop.Infrastructure.Persistence.Configurations
             builder.HasKey(u => u.Id);
             builder.Property(i => i.Title).IsRequired().HasMaxLength(20);
             builder.Property(i => i.Description).IsRequired().HasMaxLength(400);
-            builder.HasOne<Category>().WithMany().HasForeignKey(u => u.CategoryId).HasConstraintName("FK_Product_Category");
+            builder.HasOne<Category>(x=>x.Category).WithMany(x=>x.Products).HasForeignKey(u=>u.CategoryId);
         }
     }
 }

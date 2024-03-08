@@ -14,7 +14,7 @@ namespace Eshop.Infrastructure.Persistence.Configurations
             builder.Property(i => i.PhoneNumber).IsRequired().HasMaxLength(20);
             builder.Property(i => i.Adress).IsRequired().HasMaxLength(20);
             builder.Property(i => i.Total).IsRequired().HasMaxLength(20);
-            builder.HasOne<Customer>().WithMany().HasForeignKey(i => i.CustomerId).HasConstraintName("FK_OrderProduct_Customer").OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne<Customer>(u=>u.Customer).WithMany(x=>x.Orders).HasForeignKey(i => i.CustomerId);
 
         }
     }
