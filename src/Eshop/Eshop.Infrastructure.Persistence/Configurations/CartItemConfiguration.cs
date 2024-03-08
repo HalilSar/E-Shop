@@ -14,8 +14,8 @@ namespace Eshop.Infrastructure.Persistence.Configurations
         public void Configure(EntityTypeBuilder<CartItem> builder)
         {
             builder.HasKey(u => u.Id);
-            builder.HasOne<Customer>(u=>u.Customer).WithMany().HasForeignKey(i => i.CustomerId);
-            builder.HasOne<Product>(u=> u.Product).WithMany().HasForeignKey(i => i.ProductId);
+            builder.HasOne<Customer>(u=>u.Customer).WithMany(u => u.CartItems).HasForeignKey(i => i.CustomerId);
+            builder.HasOne<Product>(u=> u.Product).WithMany(u=>u.CartItems).HasForeignKey(i => i.ProductId);
 
         }
     }
