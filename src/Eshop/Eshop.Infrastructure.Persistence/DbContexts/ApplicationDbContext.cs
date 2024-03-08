@@ -125,8 +125,8 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                              }
 
                ) ;
-            builder.ApplyConfiguration(new ProductConfiguration());
             builder.ApplyConfiguration(new CategoryConfiguration());
+            builder.ApplyConfiguration(new ProductConfiguration());           
             builder.ApplyConfiguration(new CustomerConfiguration());
             builder.ApplyConfiguration(new CartItemConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
