@@ -11,23 +11,26 @@
         {
             <div class="col-6">
                 <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">@item.Title</h5>
+                        <img class="card-img-top" src="/img/pexels-math-90946.jpg" />
+                    </div>
 
-                    <h2 class="card-title">@item.Title</h2>
-                    <img class="card-img-top" src="/img/pexels-math-90946.jpg" /> <!--Absolute yetiyor-->
                     <div class="card-body">
                         <p>
                             @item.Description
                         </p>
+                        <a class="btn btn-dark" asp-action="Detail" asp-route-Id="@item.Id">Detail</a>
                     </div>
                 </div>
             </div>
         }
-        <div class="m-1">
+        <div class="ml-3 mt-1">
             @if (Model.PageCount > 1)
             {
                 @for (int i = 1; i <= Model.PageCount; i++)
                 {
-                    <a href="/Home/Index/@i" type="button" class="btn btn-primary @( i == Model.CurrentPage ? "active" : "")">@i</a>
+                    <a href="/Home/GetByCategoryId/@i" type="button" class="btn btn-dark @( i == Model.CurrentPage ? "active" : "")">@i</a>
                 }
 
             }
