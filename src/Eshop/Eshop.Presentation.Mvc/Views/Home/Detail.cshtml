@@ -5,21 +5,28 @@
 
 
 <div card>
+
     <div class="card-header">
         <h2 class="card-title">@Model.Title</h2>
+        <img class="card-img-top" src="/img/pexels-math-90946.jpg" /> <!--Absolute yetiyor-->
     </div>
-    <img class="card-img-top" src="/img/pexels-math-90946.jpg" /> <!--Absolute yetiyor-->
     <div class="card-body">
-        <h3 class="card-subtitle text-muted"></h3>
-        <p class="car">
+        <h3>Description</h3>
+
+        <p>
             @Model.Description
         </p>
         <hr />
+        <h3>Detail</h3>
         <p>
             @Model.Detail
         </p>
         <hr />
-        <h5>@Model.Amount</h5>
-        <h3>@Model.Price</h3>
+
+        <h3>Amount</h3>
+        <p >@Model.Amount</p>
+        <h3>Price</h3>     
+        <p >@Model.Price</p>
+
     </div>
 </div>
