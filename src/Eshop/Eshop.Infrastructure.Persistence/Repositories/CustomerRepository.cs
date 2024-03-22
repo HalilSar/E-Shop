@@ -18,7 +18,8 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 
         public bool Login(Customer customer)
         {
-            throw new NotImplementedException();
+            var user = _applicationDbContext.Customers.FirstOrDefault(x => x.Email == customer.Email && x.Password == customer.Password);
+            return user != null;
         }
     }
 }
