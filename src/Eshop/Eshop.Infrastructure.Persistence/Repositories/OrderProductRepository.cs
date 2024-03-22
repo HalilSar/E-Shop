@@ -12,10 +12,10 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 {
     public class OrderProductRepository : Repository<OrderProduct>, IOrderProductRepository
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+
         public OrderProductRepository(ApplicationDbContext applicationDbContext):base(applicationDbContext)
         {
-            _applicationDbContext = applicationDbContext;
+
         }
 
         public async Task CreateOrderProducts(List<CartItem> cartItems,int customerId,int orderId)

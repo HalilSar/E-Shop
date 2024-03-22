@@ -15,6 +15,11 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
 
         }
+
+        public bool Login(Customer customer)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

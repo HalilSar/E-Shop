@@ -12,10 +12,10 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 {
     public class OrderRepository:Repository<Order>,IOrderRepository
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+      
         public OrderRepository(ApplicationDbContext applicationDbContext):base(applicationDbContext)
         {
-            _applicationDbContext = applicationDbContext;
+            
         }
 
 
