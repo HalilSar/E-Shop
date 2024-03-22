@@ -13,7 +13,7 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity, new()
     {
-        private readonly ApplicationDbContext _applicationDbContext; 
+        protected readonly ApplicationDbContext _applicationDbContext; 
         public Repository(ApplicationDbContext applicationDbContext)
         {
             _applicationDbContext = applicationDbContext;

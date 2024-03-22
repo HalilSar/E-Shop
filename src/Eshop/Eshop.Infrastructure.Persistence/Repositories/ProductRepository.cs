@@ -13,10 +13,10 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 {
     public class ProductRepository : Repository<Product>, IProductRepository
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+
         public ProductRepository(ApplicationDbContext applicationDbContext):base(applicationDbContext)
         {
-            _applicationDbContext = applicationDbContext;
+
         }
         public async Task<CategoryIdProductDto> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1)
         {

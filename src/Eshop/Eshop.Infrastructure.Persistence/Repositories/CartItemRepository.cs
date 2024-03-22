@@ -12,10 +12,10 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 {
     public  class CartItemRepository:Repository<CartItem>,ICartItemRepository
     {
-        private readonly ApplicationDbContext _applicationDbContext;
+        
         public CartItemRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext)
         {
-            _applicationDbContext = applicationDbContext;
+           
         }
 
         public async Task DeleteCartItems(List<CartItem> cartItems)
