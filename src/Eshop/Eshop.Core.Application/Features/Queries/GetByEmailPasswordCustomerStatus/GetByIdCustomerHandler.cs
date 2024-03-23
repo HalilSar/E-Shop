@@ -10,19 +10,19 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetByIdCustomer
 {
-    public class GetByIdCustomerHandler : IRequestHandler< GetByIdCustomerRequest,GetByIdCustomerResponse>
+    public class GetByEmailPasswordCustomerStatusHandler : IRequestHandler<GetByEmailPasswordCustomerStatusRequest, GetByEmailPasswordCustomerStatusResponse>
     {
         IMapper _mapper;
         ICustomerRepository _customerRepository;
-        public GetByIdCustomerHandler(IMapper mapper, ICustomerRepository customerRepository)
+        public GetByEmailPasswordCustomerStatusHandler(IMapper mapper, ICustomerRepository customerRepository)
         {
             _mapper = mapper;
             _customerRepository = customerRepository;
         }
-        public async Task<GetByIdCustomerResponse> Handle(GetByIdCustomerRequest request, CancellationToken cancellationToken)
+        public async Task<GetByEmailPasswordCustomerStatusResponse> Handle(GetByEmailPasswordCustomerStatusRequest request, CancellationToken cancellationToken)
         {
-            var customer = await _customerRepository.GetById(request.Id);
-            return _mapper.Map<GetByIdCustomerResponse>(customer); 
+            var customerStatus = await _customerRepository.Login(_mapper.Map<GetByEmailPasswordCustomerStatusRequest>(request));
+            return new GetByEmailPasswordCustomerStatusResponse { CustomerStatus = customerStatus}; 
         }
     }
 }
