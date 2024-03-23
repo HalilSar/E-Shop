@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Eshop.Core.Application.Features.Queries.GetByIdCustomer
 {
-    public class GetByIdCustomerRequest:IRequest<GetByIdCustomerResponse>
+    public class GetByEmailPasswordCustomerStatusRequest : IRequest<GetByEmailPasswordCustomerStatusResponse>
     {
-        public int Id { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
     }
 }
