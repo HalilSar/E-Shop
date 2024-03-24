@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Eshop.Core.Application.Features.Queries.GetByIdCustomer
+namespace Eshop.Core.Application.Features.Queries.GetByEmailPasswordCustomerStatus
 {
     public class GetByEmailPasswordCustomerStatusHandler : IRequestHandler<GetByEmailPasswordCustomerStatusRequest, GetByEmailPasswordCustomerStatusResponse>
     {
