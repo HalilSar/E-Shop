@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Eshop.Core.Application.Interfaces.Repositories;
+using Eshop.Core.Domain.Entities;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByIdCustomer
         }
         public async Task<GetByEmailPasswordCustomerStatusResponse> Handle(GetByEmailPasswordCustomerStatusRequest request, CancellationToken cancellationToken)
         {
-            var customerStatus = await _customerRepository.Login(_mapper.Map<GetByEmailPasswordCustomerStatusRequest>(request));
+            var customerStatus = _customerRepository.Login(_mapper.Map<Customer>(request));
             return new GetByEmailPasswordCustomerStatusResponse { CustomerStatus = customerStatus}; 
         }
     }
