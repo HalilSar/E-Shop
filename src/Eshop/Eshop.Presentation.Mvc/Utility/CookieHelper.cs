@@ -14,7 +14,18 @@ namespace Eshop.Presentation.Mvc.Utility
         public static void SetUserInfo(HttpContext context, GetByEmailPasswordCustomerStatusRequest request)
         {
             var options = new CookieOptions { Expires = DateTime.Now.AddDays(7), HttpOnly = true };
-            context.Response.Cookies.Append("UserInfo", $"{request.Email}|{request.Password}",options);
+            context.Response.Cookies.Append("UserInfo", $"{request.Email}",options);  // || $"{request.Email}|{request.CustomerName}   *
+        }
+
+        public static string GetUserInfo(HttpContext context)              //  ( string, string)   return type      **
+        {
+            if (context.Request.Cookies.TryGetValue("UserInfo",out string userInfo))
+            {
+                //   var parts = userInfo.Split('|'); and return (parts[1],parts[1] ;                             ***
+                return userInfo;              
+            }
+
+            return null;  // (null, null);     ****
         }
     }
 }
