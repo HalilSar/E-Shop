@@ -27,5 +27,8 @@ namespace Eshop.Presentation.Mvc.Utility
 
             return null;  // (null, null);     ****
         }
+
+        public static void RemoveUserInfo(HttpContext context) => context.Response.Cookies.Delete("UserInfo");
+
     }
 }
