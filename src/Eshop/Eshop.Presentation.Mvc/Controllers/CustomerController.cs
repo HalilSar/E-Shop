@@ -1,10 +1,11 @@
 ﻿using Eshop.Core.Application.Features.Commands.CreateCustomer;
 using Eshop.Core.Application.Features.Commands.UpdateCustomer;
+using Eshop.Core.Application.Features.Queries.GetByEmailPasswordCustomerStatus;
 using Eshop.Core.Application.Features.Queries.GetByIdCustomer;
+using Eshop.Presentation.Mvc.Utility;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-
 namespace Eshop.Presentation.Mvc.Controllers
 {
     public class CustomerController : Controller
@@ -44,6 +45,19 @@ namespace Eshop.Presentation.Mvc.Controllers
         }
 
         public IActionResult Login() => View();
+
+        [HttpPost]
+        public IActionResult Login(GetByEmailPasswordCustomerStatusRequest request)
+        {
+            
+            var response = _mediatR.Send(request);
+            if (response.Result.CustomerStatus == true)
+            {
+                CookieHelper.SetUserInfo(HttpContext, request);
+                return RedirectToAction("Index", "Home");
+            }
+            return View();
+        }
 
     }
 }
