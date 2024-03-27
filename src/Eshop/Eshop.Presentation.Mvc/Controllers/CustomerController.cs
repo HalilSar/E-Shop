@@ -59,5 +59,11 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View();
         }
 
+        public IActionResult Logout()
+        {
+            CookieHelper.RemoveUserInfo(HttpContext);
+            return View();
+        }
+
     }
 }
