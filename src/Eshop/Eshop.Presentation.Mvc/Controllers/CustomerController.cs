@@ -43,5 +43,7 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View(products);
         }
 
+        public IActionResult Login() => View();
+
     }
 }
