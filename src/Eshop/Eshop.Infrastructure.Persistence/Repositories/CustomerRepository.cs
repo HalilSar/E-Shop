@@ -1,6 +1,7 @@
 ﻿using Eshop.Core.Application.Interfaces.Repositories;
 using Eshop.Core.Domain.Entities;
 using Eshop.Infrastructure.Persistence.DbContexts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace Eshop.Infrastructure.Persistence.Repositories
 
         }
 
-        public bool Login(Customer customer)
+        public async Task<bool> Login(Customer customer)
         {
-            var user = _applicationDbContext.Customers.FirstOrDefault(x => x.Email == customer.Email && x.Password == customer.Password);
+            var user = await _applicationDbContext.Customers.FirstOrDefaultAsync(x => x.Email == customer.Email && x.Password == customer.Password);
             return user != null;
         }
     }

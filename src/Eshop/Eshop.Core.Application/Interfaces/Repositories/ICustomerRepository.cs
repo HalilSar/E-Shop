@@ -9,7 +9,7 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 {
     public interface ICustomerRepository:IRepository<Customer>
     {
-        bool Login(Customer customer);
+        Task<bool> Login(Customer customer);
         
     }
 }
