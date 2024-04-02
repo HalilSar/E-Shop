@@ -22,7 +22,7 @@ namespace Eshop.Core.Application.Features.Queries.GetByEmailPasswordCustomerStat
         }
         public async Task<GetByEmailPasswordCustomerStatusResponse> Handle(GetByEmailPasswordCustomerStatusRequest request, CancellationToken cancellationToken)
         {
-            var customerStatus = _customerRepository.Login(_mapper.Map<Customer>(request));
+            var customerStatus = await _customerRepository.Login(_mapper.Map<Customer>(request));
             return new GetByEmailPasswordCustomerStatusResponse { CustomerStatus = customerStatus}; 
         }
     }
