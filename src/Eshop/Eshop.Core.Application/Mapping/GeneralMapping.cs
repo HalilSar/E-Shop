@@ -23,6 +23,7 @@ using Eshop.Core.Application.Features.Commands.UpdateCartItem;
 using Eshop.Core.Application.Features.Commands.DeleteCartItem;
 using Eshop.Core.Application.Features.Queries.GetCategory;
 using Eshop.Core.Application.Dto;
+using Eshop.Core.Application.Features.Queries.GetByEmailPasswordCustomerStatus;
 
 namespace Eshop.Core.Application.Mapping
 {
