@@ -30,7 +30,7 @@
             {
                 @for (int i = 1; i <= Model.PageCount; i++)
                 {
-                    <a href="/Home/GetByCategoryId/@i" type="button" class="btn btn-dark @( i == Model.CurrentPage ? "active" : "")">@i</a>
+                    <a href="/Home/GetByCategoryId/@Model.CurrentPage" type="button" class="btn btn-dark @( i == Model.CurrentPage ? "active" : "")">@i</a>
                 }
 
             }
