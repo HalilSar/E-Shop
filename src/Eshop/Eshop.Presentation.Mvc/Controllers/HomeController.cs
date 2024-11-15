@@ -23,7 +23,9 @@ namespace Eshop.Presentation.Mvc.Controllers
             _logger = logger;
             _mediatR = mediatR;
         }
-
+        
+      //Return  Index.cshtml
+      // parameter: int id
         public IActionResult Index(int id = 1)
         {
 
@@ -34,11 +36,16 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View(products.Result);
         }
 
+      //Return  Detail.cshtml
+      // parameter: GetByIdProductRequest request
         public IActionResult Detail(GetByIdProductRequest request)
         {
             var products = _mediatR.Send(request);
             return View(products.Result);
         }
+
+      //Return GetByCategoryId.cshtml
+      // parameter: GetByCategoryIdProductResquest request
         public IActionResult GetByCategoryId(GetByCategoryIdProductResquest request)
         {
             request.perPageProduct = 4;
