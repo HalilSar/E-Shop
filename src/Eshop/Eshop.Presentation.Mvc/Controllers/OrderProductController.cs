@@ -23,13 +23,17 @@ namespace Eshop.Presentation.Mvc.Controllers
             _logger = logger;
             _mediatR = mediatR;
         }
-
+        
+        //  Return OrderProductList.cshtml
+       //   Parameter  GetByOrderIdOrderProductRequest request
         public IActionResult OrderProductList(GetByOrderIdOrderProductRequest request)
         {
             return View(_mediatR.Send(request));
         }
 
 
+        //  Return Ad.cshtml or OrderProducts.cshtml
+       //   Parameter  CreateOrderProductRequest request  
         [HttpPost]
         public IActionResult Add(CreateOrderProductRequest request)
         {
