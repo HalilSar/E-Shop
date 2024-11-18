@@ -18,21 +18,28 @@ namespace Eshop.Presentation.Mvc.Controllers
             _logger = logger;
             _mediatR = mediatR;
         }
-
+        // Returns Add.cshtml	
         public IActionResult Add()
         {
             return View();
         }
+
+        // Return Add.cshtml
+        // Parameter: CreateCustomerRequest request
         [HttpPost]
         public IActionResult Add(CreateCustomerRequest request)
         {
             return View(_mediatR.Send(request));
         }
 
+        // Return Update.cshtml
         public IActionResult Update()
         {
             return View();
         }
+
+         // Return Update.cshtml
+        // Parameter: UpdateCustomerRequest request
         [HttpPost]
         public IActionResult Update(UpdateCustomerRequest request)
         {
@@ -44,8 +51,11 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View(products);
         }
 
+        // Return Login.cshtml
         public IActionResult Login() => View();
 
+         // Return Login.cshtml
+        // Parameter: GetByEmailPasswordCustomerStatusRequest request
         [HttpPost]
         public IActionResult Login(GetByEmailPasswordCustomerStatusRequest request)
         {
@@ -59,8 +69,11 @@ namespace Eshop.Presentation.Mvc.Controllers
             return View();
         }
 
+       //  return logout.cshtml
         public IActionResult Logout()
         {
+		
+            // cookie remove
             CookieHelper.RemoveUserInfo(HttpContext);
             return View();
         }
