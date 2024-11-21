@@ -27,26 +27,32 @@ namespace Eshop.Presentation.Mvc.Controllers
         {        // Burayı güncelle. customerId sini nasıl user.id sistemine katarım.  
             return View(_mediatR.Send(request));
         }
-
+        // Result Add.cshtml
         public IActionResult Add()
         {
             return View();
         }
+        // Result Add.cshtml
+        // Parameter CreateCartItemRequest request	
         [HttpPost]
         public IActionResult Add(CreateCartItemRequest request)
         {         
             return View(_mediatR.Send(request));
         }
+	// Return Update.cshtml
         public IActionResult Update()
         {
             return View();
         }
+	// Return Update.cshtml
+        // Parameter UpdateCartItemRequest request
         [HttpPost]
         public IActionResult Update(UpdateCartItemRequest request)
         {
             return View(_mediatR.Send(request));
         }
-
+        // Return View
+	// Parameter DeleteCartItemRequest request
         [HttpPost]
         public IActionResult Delete(DeleteCartItemRequest request)
         {
