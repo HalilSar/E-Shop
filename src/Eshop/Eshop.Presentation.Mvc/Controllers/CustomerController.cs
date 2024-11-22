@@ -45,7 +45,10 @@ namespace Eshop.Presentation.Mvc.Controllers
         {
             return View(_mediatR.Send(request));
         }
-        public IActionResult GetCustomer(GetByIdCustomerRequest request)
+
+        // return getcustomer.cshtml
+	// parameter GetByIdCustomerRequest request
+	public IActionResult GetCustomer(GetByIdCustomerRequest request)
         {
             var products = _mediatR.Send(request);
             return View(products);
