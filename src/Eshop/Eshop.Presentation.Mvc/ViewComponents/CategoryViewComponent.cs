@@ -15,7 +15,7 @@ namespace Eshop.Presentation.Mvc.ViewComponents
         {
             _meditR = meditR;
         }
-
+        //return /category/default.cshtml
         public IViewComponentResult Invoke()
         {
            var catlist = _meditR.Send(new GetCategoryRequest());
