@@ -11,12 +11,13 @@ namespace Eshop.Presentation.Mvc.Utility
     public static class CookieHelper
     {
         
-        public static void SetUserInfo(HttpContext context, GetByEmailPasswordCustomerStatusRequest request)
+        // parameters : HttpContext context, GetByEmailPasswordCustomerStatusRequest request
+	public static void SetUserInfo(HttpContext context, GetByEmailPasswordCustomerStatusRequest request)
         {
             var options = new CookieOptions { Expires = DateTime.Now.AddDays(7), HttpOnly = true };
             context.Response.Cookies.Append("UserInfo", $"{request.Email}",options);  // || $"{request.Email}|{request.CustomerName}   *
         }
-
+        // parameter: HttpContext context
         public static string GetUserInfo(HttpContext context)              //  ( string, string)   return type      **
         {
             if (context.Request.Cookies.TryGetValue("UserInfo",out string userInfo))
@@ -27,7 +28,7 @@ namespace Eshop.Presentation.Mvc.Utility
 
             return null;  // (null, null);     ****
         }
-
+        // parameter: HttpContext context
         public static void RemoveUserInfo(HttpContext context) => context.Response.Cookies.Delete("UserInfo");
 
     }
