@@ -18,28 +18,30 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
             _applicationDbContext = applicationDbContext;
         }
+	// Parameter T entity  where T : BaseEntity, new()
         public async Task Add(T entity)
         {
            await  _applicationDbContext.AddAsync<T>(entity);
             await _applicationDbContext.SaveChangesAsync();
         }
-
+        // Parameter T entity  where T : BaseEntity, new()
         public async Task Delete(T entity)
         {
              _applicationDbContext.Remove<T>(entity);
             await _applicationDbContext.SaveChangesAsync();
         }
-
+        // Return List<T>   where T : BaseEntity, new()
         public async Task<List<T>> Get()
         {
            return await _applicationDbContext.Set<T>().ToListAsync();
         }
-
+  // Return T where T : BaseEntity, new()
+  // Parameter int id
         public async Task<T> GetById(int id)
         {
             return await _applicationDbContext.FindAsync<T>(id);
         }
-
+        // Parameter T entity  where T : BaseEntity, new()
         public async Task Update(T entity)
         {
             _applicationDbContext.Entry<T>(entity);
