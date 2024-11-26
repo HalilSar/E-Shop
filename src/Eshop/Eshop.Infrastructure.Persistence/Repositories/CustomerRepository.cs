@@ -16,7 +16,8 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
 
         }
-
+        // Return bool
+	// Parameter : Customer customer
         public async Task<bool> Login(Customer customer)
         {
             var user = await _applicationDbContext.Customers.FirstOrDefaultAsync(x => x.Email == customer.Email && x.Password == customer.Password);
