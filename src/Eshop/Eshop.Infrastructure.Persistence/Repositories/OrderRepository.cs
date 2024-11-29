@@ -19,13 +19,15 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         }
 
 
-
+        // return List<order>>
+	// parameter int id
         public async Task<List<Order>> GetByCustomerId(int id)
         {
            return await _applicationDbContext.Set<Order>().Where(x => x.CustomerId == id).ToListAsync();
 
         }
-
+        // return order
+        // parameter int id, int customerid
         public async Task<Order> GetByCustomerIdOrder(int id, int customerId)
         {
             return await _applicationDbContext.Set<Order>().Where(x => x.Id == id && x.CustomerId == customerId).FirstOrDefaultAsync();
