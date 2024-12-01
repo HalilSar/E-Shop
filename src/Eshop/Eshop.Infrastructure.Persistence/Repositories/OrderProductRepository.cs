@@ -17,7 +17,7 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
 
         }
-
+        // parameters: List<CartItem> cartItems, int customerId, int orderId
         public async Task CreateOrderProducts(List<CartItem> cartItems,int customerId,int orderId)
         {
             
@@ -34,7 +34,8 @@ namespace Eshop.Infrastructure.Persistence.Repositories
                await  this.Add(orderProduct);
             }
         }
-
+       // return    : List<OrderProduct>
+       // parameters: int customerId, int orderId
         public  async Task< List<OrderProduct>> GetByOrderId(int id,int customerId)
         {
             return  await _applicationDbContext.Set<OrderProduct>().Where(x => x.OrderId == id && x.CustomerId==customerId).ToListAsync();
