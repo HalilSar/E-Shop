@@ -18,6 +18,8 @@ namespace Eshop.Infrastructure.Persistence.Repositories
         {
 
         }
+	// return    CategoryIdProductDto
+	// parameters : int id, int numberOfProductsPerPage, int currentPage = 1
         public async Task<CategoryIdProductDto> GetByCatId(int id, int numberOfProductsPerPage, int currentPage = 1)
         {
             var catlist = await _applicationDbContext.Set<Product>().Where(x => x.CategoryId == id).ToListAsync();
@@ -28,7 +30,8 @@ namespace Eshop.Infrastructure.Persistence.Repositories
                                               CurrentPage=currentPage
                                             };
         }
-
+        // return      ProductDto
+	// parameters: int numberOfProductsPerPage, int currentPage = 1
         public async Task<ProductDto> GetPerPageProducts(int numberOfProductsPerPage, int currentPage = 1)
         {
             var product = await Get();
