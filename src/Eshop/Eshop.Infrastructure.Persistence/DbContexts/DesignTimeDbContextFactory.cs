@@ -12,7 +12,12 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
 {
     public abstract class DesignTimeDbContextFactory<TContext> : IDesignTimeDbContextFactory<TContext> where TContext:DbContext
     {
-        protected abstract TContext CreateNewInstance(DbContextOptions<TContext> options);
+	// parameter: DbContextOptions<TContext> options
+	// return     TContext
+        protected abstract TContext CreateNewInstance(DbContextOptions<TContext> options); 
+
+	// parameter string[] args
+	// return TContext
         public TContext CreateDbContext(string[] args)
         {
             DbContextOptionsBuilder<TContext> builder = new DbContextOptionsBuilder<TContext>();
