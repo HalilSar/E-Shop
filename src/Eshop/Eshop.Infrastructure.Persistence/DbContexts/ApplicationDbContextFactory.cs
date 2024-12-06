@@ -9,7 +9,9 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
 {
     public class ApplicationDbContextFactory:DesignTimeDbContextFactory<ApplicationDbContext>
     {
-        protected override ApplicationDbContext CreateNewInstance(DbContextOptions<ApplicationDbContext> options)
+        // Return      ApplicationDbContext
+	// Parameter   DbContextOptions<ApplicationDbContext> options
+	protected override ApplicationDbContext CreateNewInstance(DbContextOptions<ApplicationDbContext> options)
         {
             return new ApplicationDbContext(options);
         }
