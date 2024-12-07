@@ -17,9 +17,10 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
         public ApplicationDbContext(DbContextOptions dbContextOption):base(dbContextOption)
         {          
         }
-
+        // parameter ModelBuilder builder
         protected override void OnModelCreating(ModelBuilder builder)
         {
+	    // Seeding	
             builder.Entity<Category>().HasData(
                 new Category {Id=1, Title = "CategoryA" },
                 new Category { Id=2,Title = "CategoryB" },
@@ -125,6 +126,8 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
                              }
 
                ) ;
+
+	    // Mapper configurations   
             builder.ApplyConfiguration(new CategoryConfiguration());
             builder.ApplyConfiguration(new ProductConfiguration());           
             builder.ApplyConfiguration(new CustomerConfiguration());
@@ -133,6 +136,8 @@ namespace Eshop.Infrastructure.Persistence.DbContexts
             builder.ApplyConfiguration(new OrderProductConfiguration());
             
         }
+
+	// DbSet tables
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
