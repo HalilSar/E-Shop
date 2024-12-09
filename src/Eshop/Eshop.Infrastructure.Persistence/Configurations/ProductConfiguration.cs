@@ -6,6 +6,7 @@ namespace Eshop.Infrastructure.Persistence.Configurations
 {
     public class ProductConfiguration : IEntityTypeConfiguration<Product>
     {
+	// parameter EntityTypeBuilder<Product> builder    
         public void Configure(EntityTypeBuilder<Product> builder)
         {
             builder.HasKey(u => u.Id);
