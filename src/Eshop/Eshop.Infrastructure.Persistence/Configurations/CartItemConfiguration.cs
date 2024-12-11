@@ -11,6 +11,7 @@ namespace Eshop.Infrastructure.Persistence.Configurations
 {
     public  class CartItemConfiguration : IEntityTypeConfiguration<CartItem>
     {
+	// Parameter: EntityTypeBuilder<CartItem> builder    
         public void Configure(EntityTypeBuilder<CartItem> builder)
         {
             builder.HasKey(u => u.Id);
