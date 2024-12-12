@@ -11,7 +11,8 @@ namespace Eshop.Infrastructure.Persistence.Configurations
 {
     public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        // Parameter EntityTypeBuilder<Category> builder
+	public void Configure(EntityTypeBuilder<Category> builder)
         {
             builder.HasKey(u => u.Id);
             builder.Property(i => i.Title).IsRequired().HasMaxLength(20);
