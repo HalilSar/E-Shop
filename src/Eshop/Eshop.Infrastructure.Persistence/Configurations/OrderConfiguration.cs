@@ -6,7 +6,8 @@ namespace Eshop.Infrastructure.Persistence.Configurations
 {
     public class OrderConfiguration : IEntityTypeConfiguration<Order>
     {
-        public void Configure(EntityTypeBuilder<Order> builder)
+        //parameter EntityTypeBuilder<Order> builder
+	public void Configure(EntityTypeBuilder<Order> builder)
         {
             builder.HasKey(u => u.Id);
             builder.Property(i => i.Name).IsRequired().HasMaxLength(20);
