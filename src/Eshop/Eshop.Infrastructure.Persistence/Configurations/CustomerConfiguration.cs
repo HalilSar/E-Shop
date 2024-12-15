@@ -11,7 +11,8 @@ namespace Eshop.Infrastructure.Persistence.Configurations
 {
     public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
     {
-        public void Configure(EntityTypeBuilder<Customer> builder)
+        // Parameter : EntityTypeBuilder<Customer> builder
+	public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.HasKey(u => u.Id);
             builder.Property(i => i.Firstname).IsRequired().HasMaxLength(20);
