@@ -12,6 +12,7 @@ namespace Eshop.Infrastructure.Persistence
     static public class ServiceRegistiration
     {
 
+        // parameters : IServiceCollection service, string connectionString
         public static  void AddPersistenceServices(this IServiceCollection service,string connectionString)
         {
             service.AddApplicationServices();
