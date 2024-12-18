@@ -10,6 +10,7 @@ namespace Eshop.Infrastructure.Infrastructure
 {
     static public class ServiceRegistration
     {
+	// Parameter IServiceCollection service
         static public void AddInfrastructureServices(this IServiceCollection services)
         {
             services.AddApplicationServices();
