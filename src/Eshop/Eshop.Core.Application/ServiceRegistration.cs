@@ -11,6 +11,7 @@ namespace Eshop.Core.Application
 {
     static public class ServiceRegistration
     {
+	// Parameter : IServiceCollection service
         static public void AddApplicationServices(this IServiceCollection service)
         {
             service.AddAutoMapper(Assembly.GetExecutingAssembly());
