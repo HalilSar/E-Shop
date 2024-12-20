@@ -31,7 +31,7 @@ namespace Eshop.Core.Application.Mapping
     {
         public GeneralMapping()
         {
-
+            // Mapping For Dtos and CQRS(Request and Response)
             CreateMap<GetByCategoryIdProductDto, Product>().ReverseMap();
             CreateMap<GetByIdProductResponse,Product>().ReverseMap();
             CreateMap<GetProductDto, Product>().ReverseMap();
