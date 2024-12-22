@@ -20,7 +20,8 @@ namespace Eshop.Core.Application.Features.Commands.CreateCartItem
             _cartItemRepository = cartItemRepository;
             _mapper = mapper;
     }
-
+          // Return CreateCartItemResponse
+	  // Parameters: CreateCartItemRequest request, CancellationToken cancellationToken
         public async Task<CreateCartItemResponse> Handle(CreateCartItemRequest request, CancellationToken cancellationToken)
         {
            var cartItem= _mapper.Map<CartItem>(request);
