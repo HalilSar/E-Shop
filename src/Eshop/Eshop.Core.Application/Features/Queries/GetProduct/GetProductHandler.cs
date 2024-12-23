@@ -21,7 +21,9 @@ namespace Eshop.Core.Application.Features.Queries.GetProduct
             _productRepository = productRepository;
             _mapper = mapper;
 
-        }
+	}
+	// Return GetProductResponse
+	// Parameters : GetProductRequest request, CancellationToken cancelleationToken
         public async Task<GetProductResponse> Handle(GetProductRequest request, CancellationToken cancellationToken)
         {
             var products =await  _productRepository.GetPerPageProducts(request.perPageProductCount, request.currentPage);
