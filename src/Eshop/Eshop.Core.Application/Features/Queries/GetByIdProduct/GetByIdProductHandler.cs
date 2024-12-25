@@ -19,6 +19,8 @@ namespace Eshop.Core.Application.Features.Queries.GetByIdProduct
             _productRepository = productRepository;
             _mapper = mapper;
         }
+	// Returns GetByIdProductResponse
+	// Parameters: CancellationToken cancellationToken, GetByIdProductRequest request
         public async Task<GetByIdProductResponse> Handle(GetByIdProductRequest request, CancellationToken cancellationToken)
         {
             var product =await _productRepository.GetById(request.Id);
