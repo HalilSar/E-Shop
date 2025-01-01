@@ -20,7 +20,8 @@ namespace Eshop.Core.Application.Features.Queries.GetByCategoryIdProduct
             _mapper = mapper;
             _productRepository = productRepository;
         }
-
+        // Return     : GetByCategoryIdProductResponse
+	// Parameters : GetByCategoryIdProductResquest request, CancellationToken cancellationToken
         public async Task<GetByCategoryIdProductResponse> Handle(GetByCategoryIdProductResquest request, CancellationToken cancellationToken)
         {
             var products = await _productRepository.GetByCatId(request.CategoryId,request.perPageProduct,request.currentPage);
