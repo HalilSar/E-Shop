@@ -19,7 +19,8 @@ namespace Eshop.Core.Application.Features.Queries.GetByCustomerIdOrders
             _mapper = mapper;
             _orderRepository = orderRepository;
         }
-
+        // Return     : List<GetByCustomerIdOrdersResponse>
+	// Paramaters : GetByCustomerIdOrdersRequest request, CancellationToken cancellationToken
         public async Task<List<GetByCustomerIdOrdersResponse>> Handle(GetByCustomerIdOrdersRequest request, CancellationToken cancellationToken)
         {
            var order =await _orderRepository.GetByCustomerId(request.CategoryId);
