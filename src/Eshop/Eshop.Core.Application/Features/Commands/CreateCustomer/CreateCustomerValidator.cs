@@ -11,7 +11,8 @@ namespace Eshop.Core.Application.Features.Commands.CreateCustomer
     {
         public CreateCustomerValidator()
         {
-            RuleFor(x => x.Firstname).NotEmpty().NotNull().WithMessage("Lüften bir isim verin.").MinimumLength(3).MaximumLength(20)
+            // CreateCustomerRequest validation.
+	    RuleFor(x => x.Firstname).NotEmpty().NotNull().WithMessage("Lüften bir isim verin.").MinimumLength(3).MaximumLength(20)
                 .WithMessage("Lütfen girilen isim 3 ila 20 arasında bir karakter içersin");
             RuleFor(x=>x.LastName).NotEmpty().NotNull().WithMessage("Lüften bir isim verin.").MinimumLength(3).MaximumLength(20)
                 .WithMessage("Lütfen girilen değer 3 ila 20 arasında bir karakter içersin");
