@@ -20,7 +20,8 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrder
             _orderRepository = orderRepository;
             _mapper = mapper;
         }
-
+        // Return     : CreateOrderResponse
+	// Parameters : CreateOrderRequest request, CancellationToken cancellationToken 
         public async Task<CreateOrderResponse> Handle(CreateOrderRequest request, CancellationToken cancellationToken)
         {
             // var carts =_applicationDbContext.CartItems.Where(i=>i.CustomerId==customerId);
