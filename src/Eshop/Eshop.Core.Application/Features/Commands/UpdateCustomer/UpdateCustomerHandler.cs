@@ -19,8 +19,9 @@ namespace Eshop.Core.Application.Features.Commands.UpdateCustomer
         {
             _customerRepository = customerRepository;
             _mapper = mapper;
-    }
-
+       }
+       // Return     : UpdateCustomerResponse
+       // Parameters : UpdateCustomerRequest request, CancellationToken cancellationToken 
         public async Task<UpdateCustomerResponse> Handle(UpdateCustomerRequest request, CancellationToken cancellationToken)
         {
            var customer = _mapper.Map<Customer>(request);
