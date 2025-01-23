@@ -21,7 +21,8 @@ namespace Eshop.Core.Application.Features.Commands.CreateOrderProduct
             _orderProductRepository = orderProductRepository;
             _cartItemRepository = cartItemRepository;
         }
-
+        // Return     : CreateOrderProductResponse
+	// Parameters : CreateOrderProductRequest request, CancellationToken cancellationToken
         public async Task<CreateOrderProductResponse> Handle(CreateOrderProductRequest request, CancellationToken cancellationToken)
         {
             var carts = await _cartItemRepository.GetByCustormerId(request.CustomerId);
