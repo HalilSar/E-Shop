@@ -10,6 +10,7 @@ namespace Eshop.Core.Application.Interfaces.Context
 {
     public interface IApplicationDbContext
     {
+	    // DbSets for database tables.
         public DbSet<Customer>       Customers     { get; set; }
         public DbSet<Category>       Categories    { get; set; }
         public DbSet<Product>        Products      { get; set; }
