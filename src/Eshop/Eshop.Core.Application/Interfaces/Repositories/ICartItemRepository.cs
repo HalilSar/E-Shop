@@ -8,7 +8,10 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 {
     public interface ICartItemRepository : IRepository<CartItem>
     {
+      // Return    : List<CartItem> 
+      // Parameter : int id
        Task<List<CartItem>> GetByCustormerId(int id);
+      // Parameter : List<CartItem> cartItems
        Task DeleteCartItems(List<CartItem> cartItems);
     }
 }
