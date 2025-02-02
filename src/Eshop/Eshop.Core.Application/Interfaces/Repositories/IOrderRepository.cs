@@ -9,7 +9,11 @@ namespace Eshop.Core.Application.Interfaces.Repositories
 {
     public interface IOrderRepository:IRepository<Order>
     {
+	// Return    : List<Order>
+	// Parameter : int id
         Task<List<Order>> GetByCustomerId(int id);
+	// Return    : Order
+        // Parameter : int id, int customerId
         Task<Order> GetByCustomerIdOrder(int id, int customerId);
 
     }
